@@ -24,5 +24,15 @@ namespace Scada_TM221_WaterFllow
         {
             InitializeComponent();
         }
+
+        private void Button_Click_ON_PUMB1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_OFF_PUMB1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

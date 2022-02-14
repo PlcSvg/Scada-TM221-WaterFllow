@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:Scada_TM221_WaterFllow"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/PushPumb.xaml" />
+                <ResourceDictionary Source="/Resources/PipeLine.xaml" />
+                <ResourceDictionary Source="/Resources/StirringPumb.xaml" />
+                <ResourceDictionary Source="/Resources/Tankinox.xaml" />
+                <ResourceDictionary Source="/Resources/Cumlangloc.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

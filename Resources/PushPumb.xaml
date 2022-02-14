@@ -1,0 +1,152 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataTemplate x:Key="PushPumb">
+        <Viewbox Stretch="Uniform" Width="32" Height="32" ToolTip="White pump" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=mscorlib">
+            <Viewbox.Tag>
+                <s:Int64>263346669</s:Int64>
+            </Viewbox.Tag>
+            <Canvas UseLayoutRounding="False" Name="Group_White_pump" Tag="#00000000,#FFFFFFFF,Original,0,Horizontal" LayoutTransform="-1,0,0,1,200,0" Width="88.963" Height="112.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Canvas Name="Group_Upstream_Pipe_Flange" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="32.883" Height="17.75" Canvas.Left="28.04" Canvas.Top="-0.5">
+                    <Path Data="M53.481,17.25L35.134,17.25 35.134,6.482 53.481,6.482z" Stretch="Fill" Width="18.347" Height="10.768" Canvas.Left="7.094" Canvas.Top="6.982">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF777777" Offset="0.01" />
+                                    <GradientStop Color="#FFF5F5F5" Offset="0.51" />
+                                    <GradientStop Color="#FF777777" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M28.04,6.482L60.923,6.482 60.923,-0.5 28.04,-0.5z" Stretch="Fill" Width="32.883" Height="6.982" Canvas.Left="0" Canvas.Top="0">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF777777" Offset="0.01" />
+                                    <GradientStop Color="#FFF5F5F5" Offset="0.51" />
+                                    <GradientStop Color="#FF777777" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Canvas>
+                <Canvas Name="Group_Pump" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="88.963" Height="89.29" Canvas.Left="0" Canvas.Top="13.5">
+                    <Path Data="M88.9629,58.1426C88.9629,82.8006 69.0479,102.7896 44.4819,102.7896 19.9159,102.7896 -9.99999999891088E-05,82.8006 -9.99999999891088E-05,58.1426 -9.99999999891088E-05,33.4876 19.9149,13.4996 44.4819,13.4996 69.0489,13.4996 88.9629,33.4876 88.9629,58.1426z" Stretch="Fill" Fill="#FFD9D9D9" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="89.213" Height="89.54" Canvas.Left="-0.125" Canvas.Top="-0.125" />
+                </Canvas>
+                <Canvas Name="Group_Volute_Chamber" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="66.777" Height="18.131" Canvas.Left="11.036" Canvas.Top="86.773">
+                    <Path Data="F1M11.036,86.773L77.813,86.773 77.813,104.904 11.036,104.904z" Stretch="Fill" Fill="#FF4C4C4C" Width="66.777" Height="18.131" Canvas.Left="0" Canvas.Top="0" />
+                </Canvas>
+                <Canvas Name="Group_Stand" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="65.652" Height="23.536" Canvas.Left="11.599" Canvas.Top="88.464">
+                    <Path Data="F1M18.694,88.464L11.599,107.27 11.599,112 23.311,112 25.675,107.27 37.387,95.559 51.463,95.559 63.175,107.27 65.54,112 77.251,112 77.251,107.27 70.27,88.464z" Stretch="Fill" Width="65.652" Height="23.536" Canvas.Left="0" Canvas.Top="0">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF4C4C4C" Offset="0.01" />
+                                    <GradientStop Color="#FFF5F5F5" Offset="0.51" />
+                                    <GradientStop Color="#FF4C4C4C" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Canvas>
+                <Canvas Name="Group_Bevel" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="79.504" Height="79.504" Canvas.Left="4.617" Canvas.Top="18.307">
+                    <Path Data="F1M4.617,58.059C4.617,80.014,22.415,97.811,44.369,97.811L44.369,97.811C66.323,97.811,84.121,80.014,84.121,58.059L84.121,58.059C84.121,36.105,66.323,18.307,44.369,18.307L44.369,18.307C22.415,18.307,4.617,36.105,4.617,58.059" Stretch="Fill" Width="79.504" Height="79.504" Canvas.Left="0" Canvas.Top="0">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.5,0.5" RadiusX="0.5" RadiusY="-0.5" GradientOrigin="0.5,0.5">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFC8C8C8" Offset="0.61" />
+                                    <GradientStop Color="sc#1, 0.7453395, 0.7453395, 0.7453395" Offset="0.75" />
+                                    <GradientStop Color="#FFF5F5F5" Offset="0.79" />
+                                    <GradientStop Color="#FFB1B1B1" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Canvas>
+                <Canvas Name="Group_Drivershaft_Flange" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="46.847" Height="46.848" Canvas.Left="21.058" Canvas.Top="34.635">
+                    <Path Data="F1M21.058,58.059C21.058,70.996,31.545,81.483,44.482,81.483L44.482,81.483C57.419,81.483,67.905,70.996,67.905,58.059L67.905,58.059C67.905,45.122,57.419,34.635,44.482,34.635L44.482,34.635C31.545,34.635,21.058,45.122,21.058,58.059" Stretch="Fill" Width="46.847" Height="46.848" Canvas.Left="0" Canvas.Top="0">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.146,0.854" EndPoint="0.854,0.146">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF808080" Offset="0.01" />
+                                    <GradientStop Color="#FFCCCCCC" Offset="0.51" />
+                                    <GradientStop Color="#FF808080" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M44.4819,34.6348C57.4189,34.6348 67.9049,45.1218 67.9049,58.0588 67.9049,70.9958 57.4189,81.4828 44.4819,81.4828 31.5449,81.4828 21.0579,70.9958 21.0579,58.0588 21.0579,45.1218 31.5449,34.6348 44.4819,34.6348z" Stretch="Fill" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="47.097" Height="47.098" Canvas.Left="-0.125" Canvas.Top="-0.125" />
+                </Canvas>
+                <Canvas Name="Group_Core" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="27.928" Height="27.929" Canvas.Left="30.405" Canvas.Top="44.095">
+                    <Path Data="F1M30.405,58.059C30.405,65.771,36.657,72.024,44.369,72.024L44.369,72.024C52.081,72.024,58.333,65.771,58.333,58.059L58.333,58.059C58.333,50.346,52.081,44.095,44.369,44.095L44.369,44.095C36.657,44.095,30.405,50.346,30.405,58.059" Stretch="Fill" Width="27.928" Height="27.929" Canvas.Left="0" Canvas.Top="0">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.5,0.5" RadiusX="0.5" RadiusY="-0.5" GradientOrigin="0.5,0.5">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF4C4C4C" Offset="0.01" />
+                                    <GradientStop Color="sc#1, 0.101440713, 0.101440713, 0.101440713" Offset="0.38" />
+                                    <GradientStop Color="sc#1, 0.164858043, 0.164858043, 0.164858043" Offset="0.47" />
+                                    <GradientStop Color="sc#1, 0.2489874, 0.2489874, 0.2489874" Offset="0.54" />
+                                    <GradientStop Color="sc#1, 0.3496015, 0.3496015, 0.3496015" Offset="0.59" />
+                                    <GradientStop Color="sc#1, 0.4125426, 0.4125426, 0.4125426" Offset="0.61" />
+                                    <GradientStop Color="#FFACACAC" Offset="0.61" />
+                                    <GradientStop Color="sc#1, 0.662820637, 0.662820637, 0.662820637" Offset="0.85" />
+                                    <GradientStop Color="#FFF5F5F5" Offset="0.92" />
+                                    <GradientStop Color="#FF4C4C4C" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Canvas>
+                <Canvas Name="Group_Fasteners" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="31.193" Height="31.306" Canvas.Left="28.829" Canvas.Top="42.405">
+                    <Path Data="F1M31.194,73.711L29.505,73.036 28.829,71.348 29.505,69.659 31.194,68.982 32.883,69.659 33.558,71.234 32.77,72.924z" Stretch="Fill" Width="4.729" Height="4.729" Canvas.Left="0" Canvas.Top="26.577">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5" GradientOrigin="0.5,0.5">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFC7C8CA" Offset="0" />
+                                    <GradientStop Color="#FFBCBEC0" Offset="0.5" />
+                                    <GradientStop Color="#FF626365" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M57.657,47.135L56.08,46.459 55.292,44.77 55.968,43.081 57.657,42.405 59.345,43.081 60.021,44.77 59.345,46.459z" Stretch="Fill" Width="4.729" Height="4.73" Canvas.Left="26.463" Canvas.Top="0">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5" GradientOrigin="0.5,0.5">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFC7C8CA" Offset="0" />
+                                    <GradientStop Color="#FFBCBEC0" Offset="0.5" />
+                                    <GradientStop Color="#FF626365" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M60.022,71.234L59.459,72.923 57.657,73.6 56.08,72.924 55.292,71.234 56.08,69.659 57.657,68.982 59.345,69.659z" Stretch="Fill" Width="4.73" Height="4.618" Canvas.Left="26.463" Canvas.Top="26.577">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.5,0.5" RadiusX="0.494" RadiusY="0.506" GradientOrigin="0.5,0.5">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFC7C8CA" Offset="0" />
+                                    <GradientStop Color="#FFBCBEC0" Offset="0.5" />
+                                    <GradientStop Color="#FF626365" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M33.558,44.771L32.883,46.347 31.194,47.136 29.505,46.46 28.829,44.771 29.505,43.082 31.194,42.406 32.883,43.082z" Stretch="Fill" Width="4.729" Height="4.73" Canvas.Left="0" Canvas.Top="0.001">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5" GradientOrigin="0.5,0.5">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFC7C8CA" Offset="0" />
+                                    <GradientStop Color="#FFBCBEC0" Offset="0.5" />
+                                    <GradientStop Color="#FF626365" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+</ResourceDictionary>
+    
+    
+    

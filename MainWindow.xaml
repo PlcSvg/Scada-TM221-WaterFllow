@@ -6,7 +6,48 @@
         xmlns:local="clr-namespace:Scada_TM221_WaterFllow"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+
+    <Border BorderBrush="Black" Margin="5" BorderThickness="1">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" Background="Orange" Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid >
+                    <TextBlock>LEMANHTUAN</TextBlock>
+                </Grid>
+            </Border>
+            <Border Background="Azure" BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0">
+                <Grid >
+                    <ContentControl ContentTemplate="{StaticResource PushPumb}" Margin="10, 10"/>
+                    <ContentControl ContentTemplate="{StaticResource PipeLine}" Margin="10, 20, -100, -50"/>
+                    <ContentControl ContentTemplate="{StaticResource StirringPumb}" Margin="-50, 50, -50, 50"/>
+                    <ContentControl ContentTemplate="{StaticResource TankInox}" Margin="-100, -100, 20, 20"/>
+                    <ContentControl ContentTemplate="{StaticResource Cumlangloc}" Margin="-218,67,218,-67" />
+                </Grid>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" >
+                        <Button  Click="Button_Click_ON_PUMB1" Margin="5">ON PUMB1</Button>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Button Click="Button_Click_OFF_PUMB1" Margin="5">OFF PUMB1</Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+            
+    </Border>
+
 </Window>

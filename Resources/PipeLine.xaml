@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataTemplate x:Key="PipeLine">
+        <Viewbox Stretch="Uniform" Width="64" Height="64" ToolTip="Short horizontal pipe" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=mscorlib">
+            <Viewbox.Tag>
+                <s:Int64>2078383901</s:Int64>
+            </Viewbox.Tag>
+            <Canvas UseLayoutRounding="False" Name="Group_Short_horizontal_pipe" Tag="#00000000,#FFFFFFFF,Original,0,None" LayoutTransform="Identity" Width="112.5" Height="29.924" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Canvas Name="Group_Horizonatal_Short" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="112.499" Height="29.699" Canvas.Left="0.001" Canvas.Top="-0.699">
+                    <Path Data="M0.001,29L112.5,29 112.5,-0.699000000000002 0.001,-0.699000000000002z" Stretch="Fill" Width="112.499" Height="29.699">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF909091" Offset="0.16" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.49" />
+                                    <GradientStop Color="#FF636465" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+</ResourceDictionary>
