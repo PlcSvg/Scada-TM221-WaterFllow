@@ -11,6 +11,11 @@
                 <ResourceDictionary Source="/Resources/StirringPumb.xaml" />
                 <ResourceDictionary Source="/Resources/Tankinox.xaml" />
                 <ResourceDictionary Source="/Resources/Cumlangloc.xaml" />
+                <ResourceDictionary Source="/Resources/Tpipe.xaml"/>
+                <ResourceDictionary Source="/Resources/CutPipe.xaml" />
+                <ResourceDictionary Source="/Resources/Van.xaml" />
+                <ResourceDictionary Source="/Resources/Sensor.xaml" />
+                <ResourceDictionary Source="/Resources/BinhInox.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
