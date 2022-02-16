@@ -7,10 +7,9 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/PushPumb.xaml" />
-                <ResourceDictionary Source="/Resources/PipeLine.xaml" />
+                <ResourceDictionary Source="/Resources/PipeLineNgang.xaml" />
                 <ResourceDictionary Source="/Resources/StirringPumb.xaml" />
                 <ResourceDictionary Source="/Resources/Tankinox.xaml" />
-                <ResourceDictionary Source="/Resources/Cumlangloc.xaml" />
                 <ResourceDictionary Source="/Resources/Tpipe.xaml"/>
                 <ResourceDictionary Source="/Resources/CutPipe.xaml" />
                 <ResourceDictionary Source="/Resources/Van.xaml" />
