@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace Scada_TM221_WaterFllow
 {
-    internal class SingleCoilTM40: INotifyPropertyChanged
+    internal class SingleCoilTM40 : INotifyPropertyChanged
     {
         /// <summary>
         /// status Digital input PLC TM221T40R; Map Memory %M1~M19
@@ -57,8 +57,46 @@ namespace Scada_TM221_WaterFllow
         private bool m54;
 
         /// <summary>
-        /// ######################################################################################################
+        /// analog input sensor
         /// </summary>
+        private ushort mw0;
+        /// <summary>
+        /// analog output pubm 1
+        /// </summary>
+        private ushort mw101;
+        /// <summary>
+        /// analog output pumb 2
+        /// </summary>
+        private ushort mw102;
+        /// <summary>
+        /// ap suat dat
+        /// </summary>
+        private ushort mw200;
+
+        public ushort MW0
+        {
+            get { return mw0; }
+            set { mw0 = value; OnChangeProperty("MW0"); }
+        }
+
+        public ushort MW101
+        {
+            get { return mw101; }
+            set { mw101 = value; OnChangeProperty("MW101"); }
+        }
+
+        public ushort MW102
+        {
+            get { return mw102; }
+            set { mw102 = value; OnChangeProperty("MW102"); }
+        }
+
+        public ushort MW200
+        {
+            get { return mw200; }
+            set { mw200 = value; OnChangeProperty("MW200"); }
+        }
+
         public bool M1
         {
             get { return m1; }
