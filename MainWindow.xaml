@@ -4,15 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scada_TM221_WaterFllow"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1200"
+        mc:Ignorable="d" Width="1024" Height="1000"
+        Title="MainWindow"
         WindowState="Maximized">
 
     <Border BorderBrush="DarkGray" Margin="1" BorderThickness="1">
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -36,11 +36,15 @@
             #########################################################################################################-->
             <Border Background="WhiteSmoke" BorderBrush="DarkGray" BorderThickness="1" Grid.Row="1" Grid.Column="0">
                 <Grid >
-                    <ContentControl ContentTemplate="{StaticResource PushPumb}" Margin="10, 10"/>
-                    <ContentControl ContentTemplate="{StaticResource PipeLine}" Margin="10, 20, -100, -50"/>
-                    <ContentControl ContentTemplate="{StaticResource StirringPumb}" Margin="-50, 50, -50, 50"/>
-                    <ContentControl ContentTemplate="{StaticResource TankInox}" Margin="-100, -100, 20, 20"/>
-                    <ContentControl ContentTemplate="{StaticResource Cumlangloc}" Margin="-218,67,218,-67" />
+                    <!--<ContentControl ContentTemplate="{StaticResource PushPumb}" Margin="100, 100"/>-->
+                    <!--<ContentControl ContentTemplate="{StaticResource PipeLine}" Margin="10, 20, -100, -50"/>-->
+                    <!--<ContentControl ContentTemplate="{StaticResource StirringPumb}" Margin="48,251,-148,-152"/>-->
+                    <!--<ContentControl ContentTemplate="{StaticResource TankInox}" Margin="-602,-229,522,148"/>-->
+                    <Image Source="D:\OneDrive\4. Desktop\2.png" Width="400" Height="600"></Image>
+                    <ContentControl ContentTemplate="{StaticResource Cumlangloc}" Margin="-253,121,253,-123" />
+                    <!--<ContentControl ContentTemplate="{StaticResource Tpipe}"/>-->
+                    <!--<ContentControl ContentTemplate="{StaticResource Van}" />-->
+                    <!--<ContentControl ContentTemplate="{StaticResource Sensor}" />-->
                 </Grid>
             </Border>
 
@@ -80,10 +84,10 @@
                     </Border>
 
                     <!--Mode control | Row 1-->
-                    <Border Grid.Row="1" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,1">
+                    <Border Grid.Row="1" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,3">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="30" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -98,11 +102,11 @@
                     </Border>
 
                     <!--address and port TM221CE40R | Row 1-->
-                    <Border Grid.Row="2" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,1">
+                    <Border Grid.Row="2" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,3">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <!--Connect TM221CE40E: ip and port-->
                             <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -121,11 +125,11 @@
                     </Border>
 
                     <!--address and port TM221CE40R | Row 3-->
-                    <Border Grid.Row="3" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,1">
+                    <Border Grid.Row="3" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,3">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <!--Connect TM221CE40E: ip and port-->
                             <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -147,9 +151,9 @@
                     <Border Grid.Row="4" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -183,9 +187,9 @@
                     <Border Grid.Row="5" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -216,13 +220,13 @@
                     </Border>
 
                     <!--Control javen 3&4 khuay 5&6 | Row 6-->
-                    <Border Grid.Row="6" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,1">
+                    <Border Grid.Row="6" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,3">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -249,11 +253,11 @@
                     </Border>
 
                     <!--Control pumb tram cap 1 | Row 7-->
-                    <Border Grid.Row="7" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,1">
+                    <Border Grid.Row="7" BorderBrush="DarkGray" BorderThickness="2" Background="Gray" Padding="5,3">
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="30" />
-                                <RowDefinition Height="30" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -286,69 +290,68 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
-                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Row="0" Grid.Column="0" Text="persure"/>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="persure" Margin="0, 3, 0, 3"/>
                             <TextBlock Grid.Row="0" Grid.Column="1" Text="5bar" HorizontalAlignment="Center"></TextBlock>
 
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Low water"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Low water" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="1" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Error protect phase"/>
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Error protect phase" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="2" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Error Clean Water Pumb 1"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Error Clean Water Pumb 1" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="3" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Error Clean Water Pumb 2" />
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Error Clean Water Pumb 2" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="4" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="5" Grid.Column="0" Text="Error Pumb Javen 1" />
+                            <TextBlock Grid.Row="5" Grid.Column="0" Text="Error Pumb Javen 1" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="5" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="6" Grid.Column="0" Text="Error Pumb Javen 2" />
+                            <TextBlock Grid.Row="6" Grid.Column="0" Text="Error Pumb Javen 2" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="6" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>
 
-
-                            <TextBlock Grid.Row="7" Grid.Column="0" Text="Error may khuay 1" />
+                            <TextBlock Grid.Row="7" Grid.Column="0" Text="Error may khuay 1" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="7" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="8" Grid.Column="0" Text="Error may khuay 2" />
+                            <TextBlock Grid.Row="8" Grid.Column="0" Text="Error may khuay 2" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="8" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="9" Grid.Column="0" Text="Error pumb nuoc tho 1" />
+                            <TextBlock Grid.Row="9" Grid.Column="0" Text="Error pumb nuoc tho 1" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="9" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="10" Grid.Column="0" Text="Error pumb nuoc tho 2" />
+                            <TextBlock Grid.Row="10" Grid.Column="0" Text="Error pumb nuoc tho 2" Margin="0, 3, 0, 3"/>
                             <Canvas Grid.Row="10" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
                             </Canvas>

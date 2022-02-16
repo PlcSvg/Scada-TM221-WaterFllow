@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataTemplate x:Key="CutPipe">
+        <Viewbox Stretch="Uniform" Width="64" Height="64" ToolTip="90° curve 1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=mscorlib">
+            <Viewbox.Tag>
+                <s:Int64>630871749</s:Int64>
+            </Viewbox.Tag>
+            <Canvas UseLayoutRounding="False" Name="Group_90__curve_1" Tag="#00000000,#FFFFFFFF,Original,180,None" LayoutTransform="-1,-1.22460635382238E-16,1.22460635382238E-16,-1,200,200" Width="112.5" Height="112.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Canvas Name="Group_90_curve_1" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="112.5" Height="112.5" Canvas.Left="0" Canvas.Top="-0.5">
+                    <Path Data="M0,67.263L60.486,67.263 60.486,61.772 0,61.772z" Stretch="Fill" Width="60.486" Height="5.491" Canvas.Left="0" Canvas.Top="62.272">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="1,0.5" EndPoint="0,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M73.677,54.707L69.408,54.707 69.408,-0.5 73.677,-0.5z" Stretch="Fill" Width="4.269" Height="55.207" Canvas.Left="69.408" Canvas.Top="0">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF909091" Offset="0.16" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.49" />
+                                    <GradientStop Color="#FF636465" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5C36.547,-0.5,0,21.326,0,64.555L0,64.555 60.45,64.717C61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785C71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="71.497" Height="65.217" Canvas.Left="0" Canvas.Top="0">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L60.486,112 60.486,62.709 0,62.709z" Stretch="Fill" Width="60.486" Height="49.291" Canvas.Left="0" Canvas.Top="63.209">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="1,0.503" EndPoint="0,0.503">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF666767" Offset="0.01" />
+                                    <GradientStop Color="#FF939394" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FFA9AAAA" Offset="0.74" />
+                                    <GradientStop Color="#FF646566" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M70.908,54.764L112.5,54.764 112.5,-0.443999999999988 70.908,-0.443999999999988z" Stretch="Fill" Width="41.592" Height="55.208" Canvas.Left="70.908" Canvas.Top="0.056">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.502,0" EndPoint="0.502,1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF909091" Offset="0.16" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.49" />
+                                    <GradientStop Color="#FFA3A4A4" Offset="0.75" />
+                                    <GradientStop Color="#FF636465" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </DataTemplate>
+</ResourceDictionary>
