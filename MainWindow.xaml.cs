@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EasyModbus;
 
 namespace Scada_TM221_WaterFllow
 {
@@ -20,49 +21,23 @@ namespace Scada_TM221_WaterFllow
     /// </summary>
     public partial class MainWindow : Window
     {
+        ModbusClient modbusClientTM40 = new ModbusClient();
+        ModbusClient modbusClientTM24 = new ModbusClient();
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click_On_Eventer_1(object sender, RoutedEventArgs e)
+        private void ConnectTM40(object sender, RoutedEventArgs e)
         {
-
+            modbusClientTM40.Connect();
         }
 
-        private void Button_Click_Off_Eventer_1(object sender, RoutedEventArgs e)
+        private void DisconnectTM40(object sender, RoutedEventArgs e)
         {
-
+            modbusClientTM40?.Disconnect();
         }
 
-        private void Button_Click_On_Eventer_2(object sender, RoutedEventArgs e)
-        {
 
-        }
-
-        private void Button_Click_Off_Eventer_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_ON_PUMB1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_OFF_PUMB1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_ON_PUMB2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_OFF_PUMB2(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
