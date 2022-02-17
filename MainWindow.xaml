@@ -167,14 +167,14 @@
                             <Button Grid.Column="2" Grid.Row="1" Name="BtPumb1off" Click="Pumb_1_Off" HorizontalAlignment="Left">Stop</Button>
                             <!--modify value frequency push pumb 1-->
                             <TextBlock Grid.Column="0" Grid.Row="2"><Bold>Frequency</Bold></TextBlock>
-                            <Slider Name="slValue" Grid.Column="1" Grid.Row="2"              
+                            <Slider Name="frequency1" Grid.Column="1" Grid.Row="2"              
                                 Orientation="Horizontal"
                                 HorizontalAlignment="Center"
                                 Minimum="25" Maximum="50" 
                                 Width="50"
                                 TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" />
-                            <TextBox Grid.Column="2" Grid.Row="2" 
-                                        Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
+                            <TextBox Grid.Column="2" Grid.Row="2" Name="Boxfrequency1" 
+                                        Text="{Binding ElementName=frequency1, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
                                         TextAlignment="Left" HorizontalAlignment="Left" Width="20"/>
                             <TextBlock Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center">Hz</TextBlock>
                         </Grid>
@@ -203,14 +203,14 @@
                             <Button Grid.Column="2" Grid.Row="1" Name="BtPumb2off" Click="Pumb_2_Off" HorizontalAlignment="Left">Stop</Button>
                             <!--modify value frequency push pumb 1-->
                             <TextBlock Grid.Column="0" Grid.Row="2"><Bold>Frequency</Bold></TextBlock>
-                            <Slider Name="slValue2" Grid.Column="1" Grid.Row="2"              
+                            <Slider Name="frequency2" Grid.Column="1" Grid.Row="2"              
                                 Orientation="Horizontal"
                                 HorizontalAlignment="Center"
                                 Minimum="25" Maximum="50" 
                                 Width="50"
                                 TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" />
-                            <TextBox Grid.Column="2" Grid.Row="2" 
-                                        Text="{Binding ElementName=slValue2, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
+                            <TextBox Grid.Column="2" Grid.Row="2" Name="Boxfrequency2"
+                                        Text="{Binding ElementName=frequency2, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
                                         TextAlignment="Left" HorizontalAlignment="Left" Width="20" />
                             <TextBlock Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center">Hz</TextBlock>
                         </Grid>
