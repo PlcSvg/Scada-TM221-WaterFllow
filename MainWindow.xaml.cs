@@ -247,6 +247,7 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_Javen_3_On(Object sender, RoutedEventArgs e)
         {
+            modbusClientTM40.WriteSingleCoil(40, true);
             BtPumb3on.IsEnabled = false;
             BtPumb3off.IsEnabled = true;
         }
@@ -258,9 +259,9 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_Javen_3_Off(Object sender, RoutedEventArgs e)
         {
+            modbusClientTM40.WriteSingleCoil(40, false);
             BtPumb3on.IsEnabled = true;
             BtPumb3off.IsEnabled = false;
-
         }
 
         /// <summary>
@@ -270,6 +271,7 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_Javen_4_On(Object sender, RoutedEventArgs e)
         {
+            modbusClientTM40.WriteSingleCoil(41, true);
             BtPumb4on.IsEnabled = false;
             BtPumb4off.IsEnabled = true;
         }
@@ -281,6 +283,7 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_Javen_4_Off(Object sender, RoutedEventArgs e)
         {
+            modbusClientTM40.WriteSingleCoil(41, false);
             BtPumb4on.IsEnabled = true;
             BtPumb4off.IsEnabled = false;
         }
@@ -292,6 +295,7 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_Khuay_5_On(Object sender, RoutedEventArgs e)
         {
+            modbusClientTM40.WriteSingleCoil(42, true);
             BtPumb5on.IsEnabled = false;
             BtPumb5off.IsEnabled = true;
         }
@@ -303,6 +307,7 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_Khuay_5_Off(Object sender, RoutedEventArgs e)
         {
+            modbusClientTM40.WriteSingleCoil(42, false);
             BtPumb5on.IsEnabled = true;
             BtPumb5off.IsEnabled = false;
 
@@ -315,6 +320,7 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_Khuay_6_On(Object sender, RoutedEventArgs e)
         {
+            modbusClientTM40.WriteSingleCoil(43, true);
             BtPumb6on.IsEnabled = false;
             BtPumb6off.IsEnabled = true;
         }
@@ -326,6 +332,7 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_Khuay_6_Off(Object sender, RoutedEventArgs e)
         {
+            modbusClientTM40.WriteSingleCoil(43, false);
             BtPumb6on.IsEnabled = true;
             BtPumb6off.IsEnabled = false;
         }
