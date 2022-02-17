@@ -86,15 +86,28 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Width" Value="50" />
+                            <Setter Property="Height" Value="20"/>
+                        </Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="BorderThickness" Value="1" />
+                            <Setter Property="BorderBrush" Value="DarkGray" />
+                        </Style>
+                    </Grid.Resources>
+                    
                     <!--title | Row 0-->
-                    <Border Background="DarkCyan" Grid.Row="0" BorderBrush="DarkGray" BorderThickness="1" >
+                    <Border Background="DarkCyan" Grid.Row="0">
                         <TextBlock FontSize="15"
                                 Foreground="Black" HorizontalAlignment="Center" Margin="5"><Bold>Control Panel</Bold></TextBlock>
                     </Border>
 
                     <!--Mode control | Row 1-->
-                    <Border Grid.Row="1" BorderBrush="DarkGray" BorderThickness="1" Background="Gray" Padding="5,3">
+                    <Border Grid.Row="1" Background="Gray" Padding="5,3">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -105,34 +118,34 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <!--power supply eventer 1 before run push pumb 1-->
-                            <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"><Bold>Mode Control</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Width="50" Height="20">Man</Button>
-                            <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Width="50" Height="20">Auto</Button>
+                            <TextBlock Grid.Column="0" Grid.Row="0"><Bold>Mode Control</Bold></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="0" Name="BtMan" Click="ManTM40" HorizontalAlignment="Right">Man</Button>
+                            <Button Grid.Column="2" Grid.Row="0" Name="BtAuto" Click="AutoTM40" HorizontalAlignment="Left">Auto</Button>
                         </Grid>
                     </Border>
 
                     <!--address and port TM221CE40R | Row 1-->
-                    <Border Grid.Row="2" BorderBrush="DarkGray" BorderThickness="1" Background="Gray" Padding="5,3">
+                    <Border Grid.Row="2" Background="Gray" Padding="5,3">
                         <!--Connect TM221CE40E: ip and port-->
                         <StackPanel Grid.Row="0" Orientation="Horizontal">
-                            <TextBlock  Grid.Row="0" VerticalAlignment="Center" Margin="0, 0, 6, 0"><Bold>Slave TM221CE40R</Bold></TextBlock>
-                            <Button  Grid.Row="0" HorizontalAlignment="Right" Click="ConnectTM40" Width="55" Height="20">Connect</Button>
-                            <Button  Grid.Row="0" HorizontalAlignment="Right" Click="DisconnectTM40" Width="80" Height="20">Disconnect</Button>
+                            <TextBlock  Grid.Row="0" Margin="0, 0, 6, 0"><Bold>Slave TM221CE40R</Bold></TextBlock>
+                            <Button  Grid.Row="0" HorizontalAlignment="Right" Name="Btplc40on" Click="ConnectTM40" Width="55">Connect</Button>
+                            <Button  Grid.Row="0" HorizontalAlignment="Right" Name="Btplc40off" Click="DisconnectTM40" Width="80">Disconnect</Button>
                         </StackPanel>
                     </Border>
 
                     <!--address and port TM221CE40R | Row 3-->
-                    <Border Grid.Row="3" BorderBrush="DarkGray" BorderThickness="1" Background="Gray" Padding="5,3">
+                    <Border Grid.Row="3" Background="Gray" Padding="5,3">
                         <!--Connect TM221CE40E: ip and port-->
                         <StackPanel Grid.Row="0" Orientation="Horizontal">
-                            <TextBlock  Grid.Row="0" VerticalAlignment="Center" Margin="0, 0, 6, 0"><Bold>Slave TM221CE24R</Bold></TextBlock>
-                            <Button  Grid.Row="0" HorizontalAlignment="Right" Click="ConnectTM24" Width="55" Height="20">Connect</Button>
-                            <Button  Grid.Row="0" HorizontalAlignment="Right" Click="DisconnectTM24" Width="80" Height="20">Disconnect</Button>
+                            <TextBlock  Grid.Row="0" Margin="0, 0, 6, 0"><Bold>Slave TM221CE24R</Bold></TextBlock>
+                            <Button  Grid.Row="0" HorizontalAlignment="Right" Name="Btplc24on"  Click="ConnectTM24" Width="55">Connect</Button>
+                            <Button  Grid.Row="0" HorizontalAlignment="Right" Name="Btplc24off" Click="DisconnectTM24" Width="80">Disconnect</Button>
                         </StackPanel>
                     </Border>
 
                     <!--Control eventer1 and pumb 1 | Row 4-->
-                    <Border Grid.Row="4" BorderBrush="DarkGray" BorderThickness="1" Background="Gray" Padding="5">
+                    <Border Grid.Row="4" Background="Gray" Padding="5">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -145,15 +158,15 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <!--power supply eventer 1 before run push pumb 1-->
-                            <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"><Bold>Eventer 1</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Click="Button_Click_On_Eventer_1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Click="Button_Click_Off_Eventer_1" Width="50" Height="20">Stop</Button>
+                            <TextBlock Grid.Column="0" Grid.Row="0"><Bold>Eventer 1</Bold></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="0" Name="BtEventer1on" Click="Eventer_1_On" HorizontalAlignment="Right">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="0" Name="BtEventer1off" Click="Eventer_1_Off" HorizontalAlignment="Left">Stop</Button>
                             <!--run push pumb 1-->
-                            <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"><Bold>Clean Water Pumb 1</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Click="Button_Click_ON_PUMB1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Click="Button_Click_OFF_PUMB1" Width="50" Height="20">Stop</Button>
+                            <TextBlock Grid.Column="0" Grid.Row="1"><Bold>Clean Water Pumb 1</Bold></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="1" Name="BtPumb1on" Click="Pumb_1_On" HorizontalAlignment="Right">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="1" Name="BtPumb1off" Click="Pumb_1_Off" HorizontalAlignment="Left">Stop</Button>
                             <!--modify value frequency push pumb 1-->
-                            <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"><Bold>Frequency</Bold></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.Row="2"><Bold>Frequency</Bold></TextBlock>
                             <Slider Name="slValue" Grid.Column="1" Grid.Row="2"              
                                 Orientation="Horizontal"
                                 HorizontalAlignment="Center"
@@ -168,7 +181,7 @@
                     </Border>
 
                     <!--Control enventer 2 and pumb 2 | Row 5 -->
-                    <Border Grid.Row="5" BorderBrush="DarkGray" BorderThickness="1" Background="Gray" Padding="5">
+                    <Border Grid.Row="5" Background="Gray" Padding="5">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -181,15 +194,15 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <!--power supply eventer 1 before run push pumb 1-->
-                            <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"><Bold>Eventer 2</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Click="Button_Click_On_Eventer_1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Click="Button_Click_Off_Eventer_1" Width="50" Height="20">Stop</Button>
+                            <TextBlock Grid.Column="0" Grid.Row="0"><Bold>Eventer 2</Bold></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="0" Name="BtEventer2on" Click="Eventer_2_On" HorizontalAlignment="Right">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="0" Name="BtEventer2off" Click="Eventer_2_Off" HorizontalAlignment="Left" Width="50" Height="20">Stop</Button>
                             <!--run push pumb 1-->
                             <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"><Bold>Clean Water Pumb 2</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Click="Button_Click_ON_PUMB1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Click="Button_Click_OFF_PUMB1" Width="50" Height="20">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="1" Name="BtPumb2on" Click="Pumb_2_On" HorizontalAlignment="Right">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="1" Name="BtPumb2off" Click="Pumb_2_Off" HorizontalAlignment="Left">Stop</Button>
                             <!--modify value frequency push pumb 1-->
-                            <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"><Bold>Frequency</Bold></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.Row="2"><Bold>Frequency</Bold></TextBlock>
                             <Slider Name="slValue2" Grid.Column="1" Grid.Row="2"              
                                 Orientation="Horizontal"
                                 HorizontalAlignment="Center"
@@ -204,8 +217,9 @@
                     </Border>
 
                     <!--Control javen 3&4 khuay 5&6 | Row 6-->
-                    <Border Grid.Row="6" BorderBrush="DarkGray" BorderThickness="1" Background="Gray" Padding="5,3">
+                    <Border Grid.Row="6" Background="Gray" Padding="5,3">
                         <Grid>
+                           
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -218,26 +232,26 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <!--run pumb javen 3-->
-                            <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"><Bold>Pumb Javen 3</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Click="Button_Click_On_Eventer_1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Click="Button_Click_Off_Eventer_1" Width="50" Height="20">Stop</Button>
+                            <TextBlock Grid.Column="0" Grid.Row="0"><Bold>Pumb Javen 3</Bold></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Name="BtPumb3on" Click="Pumb_Javen_3_On">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Name="BtPumb3off" Click="Pumb_Javen_3_Off">Stop</Button>
                             <!--run pumb javen 4-->
-                            <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"><Bold>Pumb Javen 4</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Click="Button_Click_ON_PUMB1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Click="Button_Click_OFF_PUMB1" Width="50" Height="20">Stop</Button>
+                            <TextBlock Grid.Column="0" Grid.Row="1" ><Bold>Pumb Javen 4</Bold></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Name="BtPumb4on" Click="Pumb_Javen_4_On" >Start</Button>
+                            <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Name="BtPumb4off" Click="Pumb_Javen_4_Off">Stop</Button>
                             <!--run pumb khuay 5-->
-                            <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"><Bold>Stirring Pumb 5</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Click="Button_Click_On_Eventer_1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Click="Button_Click_Off_Eventer_1" Width="50" Height="20">Stop</Button>
+                            <TextBlock Grid.Column="0" Grid.Row="2" ><Bold>Stirring Pumb 5</Bold></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Name="BtPumb5on" Click="Pumb_Khuay_5_On" >Start</Button>
+                            <Button Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Name="BtPumb5off" Click="Pumb_Khuay_5_Off">Stop</Button>
                             <!--run pumb khuay 5-->
-                            <TextBlock Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"><Bold>Stirring Pumb 6</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" Click="Button_Click_ON_PUMB1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Click="Button_Click_OFF_PUMB1" Width="50" Height="20">Start</Button>
+                            <TextBlock Grid.Column="0" Grid.Row="3" ><Bold>Stirring Pumb 6</Bold></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" Name="BtPumb6on" Click="Pumb_Khuay_6_On" >Start</Button>
+                            <Button Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Name="BtPumb6off" Click="Pumb_Khuay_6_Off">Stop</Button>
                         </Grid>
                     </Border>
 
                     <!--Control pumb tram cap 1 | Row 7-->
-                    <Border Grid.Row="7" BorderBrush="DarkGray" BorderThickness="1" Background="Gray" Padding="5,3">
+                    <Border Grid.Row="7" Background="Gray" Padding="5,3">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -249,13 +263,13 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <!--Raw water pumb 1-->
-                            <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"><Bold>Raw Water Pumb 1</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Click="Button_Click_On_Eventer_1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Click="Button_Click_Off_Eventer_1" Width="50" Height="20">Start</Button>
+                            <TextBlock Grid.Column="0" Grid.Row="0"><Bold>Raw Water Pumb 1</Bold></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Name="Btnt1on" Click="Pumb_NT_1_On">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Name="Btnt1off" Click="Pumb_NT_1_Off">Stop</Button>
                             <!--Raw water pumb 2-->
                             <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"><Bold>Raw Water Pumb 2</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Click="Button_Click_ON_PUMB1" Width="50" Height="20">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Click="Button_Click_OFF_PUMB1" Width="50" Height="20">Start</Button>
+                            <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Name="Btnt2on" Click="Pumb_NT_2_On">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Name="Btnt2off" Click="Pumb_NT_2_Off">Stop</Button>
                         </Grid>
                     </Border>
 
@@ -267,7 +281,7 @@
                     <!--status error | Row 8-->
 
 
-                    <Border Grid.Row="9" BorderBrush="DarkGray" BorderThickness="1" Background="Gray" Margin="0,0,0, -325" Padding="5">
+                    <Border Grid.Row="9" Background="Gray" Margin="0,0,0, -325" Padding="5">
                         <Grid Background="Gray">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -286,58 +300,67 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
+                            <Grid.Resources>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Margin" Value="0, 3, 0, 3"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                </Style>
+                                <Style TargetType="{x:Type Rectangle}">
+                                    <Setter Property="Canvas.Left" Value="58"/>
+                                    <Setter Property="Canvas.Top" Value="6"/>
+                                </Style>
+                            </Grid.Resources>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="persure"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="5bar"></TextBlock>
 
-                            <TextBlock Grid.Row="0" Grid.Column="0" Text="persure" Margin="0, 3, 0, 3"/>
-                            <TextBlock Grid.Row="0" Grid.Column="1" Text="5bar" HorizontalAlignment="Center"></TextBlock>
-
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Low water" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Low water"/>
                             <Canvas Grid.Row="1" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black"/>
                             </Canvas>
 
-                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Error protect phase" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Error protect phase"/>
                             <Canvas Grid.Row="2" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black"/>
                             </Canvas>
 
-                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Error Clean Water Pumb 1" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Error Clean Water Pumb 1"/>
                             <Canvas Grid.Row="3" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black"/>
                             </Canvas>
 
-                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Error Clean Water Pumb 2" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Error Clean Water Pumb 2"/>
                             <Canvas Grid.Row="4" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black"/>
                             </Canvas>
 
-                            <TextBlock Grid.Row="5" Grid.Column="0" Text="Error Pumb Javen 1" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="5" Grid.Column="0" Text="Error Pumb Javen 1"/>
                             <Canvas Grid.Row="5" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="6" Grid.Column="0" Text="Error Pumb Javen 2" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="6" Grid.Column="0" Text="Error Pumb Javen 2"/>
                             <Canvas Grid.Row="6" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="7" Grid.Column="0" Text="Error may khuay 1" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="7" Grid.Column="0" Text="Error may khuay 1"/>
                             <Canvas Grid.Row="7" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="8" Grid.Column="0" Text="Error may khuay 2" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="8" Grid.Column="0" Text="Error may khuay 2"/>
                             <Canvas Grid.Row="8" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="9" Grid.Column="0" Text="Error pumb nuoc tho 1" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="9" Grid.Column="0" Text="Error pumb nuoc tho 1"/>
                             <Canvas Grid.Row="9" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black" />
                             </Canvas>
 
-                            <TextBlock Grid.Row="10" Grid.Column="0" Text="Error pumb nuoc tho 2" Margin="0, 3, 0, 3"/>
+                            <TextBlock Grid.Row="10" Grid.Column="0" Text="Error pumb nuoc tho 2" />
                             <Canvas Grid.Row="10" Grid.Column="1">
-                                <Rectangle Width="10" Height="10" Fill="Black" Canvas.Left="58" Canvas.Top="6" />
+                                <Rectangle Width="10" Height="10" Fill="Black" />
                             </Canvas>
                         </Grid>
                     </Border>
