@@ -21,29 +21,61 @@ namespace Scada_TM221_WaterFllow
     /// </summary>
     public partial class MainWindow : Window
     {
-        ModbusClient modbusClientTM40 = new ModbusClient();
-        ModbusClient modbusClientTM24 = new ModbusClient();
+        public ModbusClient modbusClientTM40 = new ModbusClient();
+        public ModbusClient modbusClientTM24 = new ModbusClient();
+        public SingleCoilTM40 singleCoilTM40 = new SingleCoilTM40();
         public MainWindow()
         {
             InitializeComponent();
+            BeginEnableButton();
+            modbusClientTM40.Connect();
+            testName.DataContext = singleCoilTM40;
+            CompositionTarget.Rendering += OnTimedEventTM40;
+        }
 
+        private void OnTimedEventTM40(object sender, EventArgs e)
+        {
+            singleCoilTM40.M0 = modbusClientTM40.ReadCoils(0, 1)[0];
+            singleCoilTM40.M1 = modbusClientTM40.ReadCoils(1, 1)[0];
+            singleCoilTM40.M2 = modbusClientTM40.ReadCoils(2, 1)[0];
+            singleCoilTM40.M3 = modbusClientTM40.ReadCoils(3, 1)[0];
+            singleCoilTM40.M4 = modbusClientTM40.ReadCoils(4, 1)[0];
+            singleCoilTM40.M5 = modbusClientTM40.ReadCoils(5, 1)[0];
+            singleCoilTM40.M6 = modbusClientTM40.ReadCoils(6, 1)[0];
+            singleCoilTM40.M7 = modbusClientTM40.ReadCoils(7, 1)[0];
+            singleCoilTM40.M8 = modbusClientTM40.ReadCoils(8, 1)[0];
+            singleCoilTM40.M9 = modbusClientTM40.ReadCoils(9, 1)[0];
+            singleCoilTM40.M10 = modbusClientTM40.ReadCoils(10, 1)[0];
+            singleCoilTM40.M11 = modbusClientTM40.ReadCoils(11, 1)[0];
+            singleCoilTM40.M12 = modbusClientTM40.ReadCoils(12, 1)[0];
+            singleCoilTM40.M13 = modbusClientTM40.ReadCoils(13, 1)[0];
+            singleCoilTM40.M14 = modbusClientTM40.ReadCoils(14, 1)[0];
+            singleCoilTM40.M15 = modbusClientTM40.ReadCoils(15, 1)[0];
+            singleCoilTM40.M16 = modbusClientTM40.ReadCoils(16, 1)[0];
+            singleCoilTM40.M17 = modbusClientTM40.ReadCoils(17, 1)[0];
+            singleCoilTM40.M18 = modbusClientTM40.ReadCoils(18, 1)[0];
+            singleCoilTM40.M19 = modbusClientTM40.ReadCoils(19, 1)[0];
+        }
+
+        /// <summary>
+        /// Set Button off false when start app
+        /// </summary>
+        private void BeginEnableButton()
+        {
             Btplc40off.IsEnabled = false;
             Btplc24off.IsEnabled = false;
             BtEventer1off.IsEnabled = false;
             BtPumb1off.IsEnabled = false;
-
             BtEventer2off.IsEnabled = false;
             BtPumb2off.IsEnabled = false;
-
             BtPumb3off.IsEnabled = false;
             BtPumb4off.IsEnabled = false;
             BtPumb5off.IsEnabled = false;
             BtPumb6off.IsEnabled = false;
-
             Btnt1off.IsEnabled = false;
             Btnt2off.IsEnabled = false;
         }
-
+        
         /// <summary>
         /// Switch Man
         /// </summary>

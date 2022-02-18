@@ -7,299 +7,197 @@ using System.ComponentModel;
 
 namespace Scada_TM221_WaterFllow
 {
-    internal class SingleCoilTM40 : INotifyPropertyChanged
+    public class SingleCoilTM40 : INotifyPropertyChanged
     {
-        /// <summary>
-        /// status Digital input PLC TM221T40R; Map Memory %M1~M19
-        /// </summary>
-        private bool m1;
-        private bool m2;
-        private bool m3;
-        private bool m4;
-        private bool m5;
-        private bool m6;
-        private bool m7;
-        private bool m8;
-        private bool m9;
-        private bool m10;
-        private bool m11;
-        private bool m12;
-        private bool m13;
-        private bool m14;
-        private bool m15;
-        private bool m16;
-        private bool m17;
-        private bool m18;
-        private bool m19;
-
-        /// <summary>
-        /// Mode Remote Pumb and Inventer 22kw; Map Memory %M20~%M23
-        /// </summary>
-        private bool m20;
-        private bool m21;
-        private bool m22;
-        private bool m23;
-
-        /// <summary>
-        /// Mode Auto Pumb and Inventer 22kw; Map Memory %M30~%M33
-        /// </summary>
-        private bool m30;
-        private bool m31;
-        private bool m32;
-        private bool m33;
-
-        /// <summary>
-        /// Protect P1: %m51; Protect P2: %m52; Mode Remote %m53; Mode Auto %m54
-        /// </summary>
-        private bool m51;
-        private bool m52;
-        private bool m53;
-        private bool m54;
-
-        /// <summary>
-        /// analog input sensor
-        /// </summary>
-        private ushort mw0;
-        /// <summary>
-        /// analog output pubm 1
-        /// </summary>
-        private ushort mw101;
-        /// <summary>
-        /// analog output pumb 2
-        /// </summary>
-        private ushort mw102;
-        /// <summary>
-        /// ap suat dat
-        /// </summary>
-        private ushort mw200;
-
+        private readonly bool[] m;
+        private readonly ushort[] mw;
+        public SingleCoilTM40() { }
         public ushort MW0
         {
-            get { return mw0; }
-            set { mw0 = value; OnChangeProperty("MW0"); }
+            get { return mw[0]; }
+            set { mw[0] = value; OnChangeProperty("MW0"); }
         }
-
-        public ushort MW101
+        public ushort MW1
         {
-            get { return mw101; }
-            set { mw101 = value; OnChangeProperty("MW101"); }
+            get { return mw[1]; }
+            set { mw[1] = value; OnChangeProperty("MW1"); }
         }
-
-        public ushort MW102
+        public ushort MW2
         {
-            get { return mw102; }
-            set { mw102 = value; OnChangeProperty("MW102"); }
+            get { return mw[2]; }
+            set { mw[2] = value; OnChangeProperty("MW2"); }
         }
-
-        public ushort MW200
+        public ushort MW3
         {
-            get { return mw200; }
-            set { mw200 = value; OnChangeProperty("MW200"); }
+            get { return mw[3]; }
+            set { mw[3] = value; OnChangeProperty("MW3"); }
         }
-
+        public bool M0
+        {
+            get { return m[0]; }
+            set { m[0] = value; OnChangeProperty("M0"); }
+        }
         public bool M1
         {
-            get { return m1; }
-            set { m1 = value; OnChangeProperty("M1"); }
+            get { return m[1]; }
+            set { m[1] = value; OnChangeProperty("M1"); }
         }
-
         public bool M2
         {
-            get { return m2; }
-            set { m2 = value; OnChangeProperty("M2"); }
+            get { return m[2]; }
+            set { m[2] = value; OnChangeProperty("M2"); }
         }
-
         public bool M3
         {
-            get { return m3; }
-            set { m3 = value; OnChangeProperty("M3"); }
+            get { return m[3]; }
+            set { m[3] = value; OnChangeProperty("M3"); }
         }
-
         public bool M4
         {
-            get { return m4; }
-            set { m4 = value; OnChangeProperty("M4"); }
+            get { return m[4]; }
+            set { m[4] = value; OnChangeProperty("M4"); }
         }
-
         public bool M5
         {
-            get { return m5; }
-            set { m5 = value; OnChangeProperty("M5"); }
+            get { return m[5]; }
+            set { m[5] = value; OnChangeProperty("M5"); }
         }
-
         public bool M6
         {
-            get { return m6; }
-            set { m6 = value; OnChangeProperty("M6"); }
+            get { return m[6]; }
+            set { m[6] = value; OnChangeProperty("M6"); }
         }
-
         public bool M7
         {
-            get { return m7; }
-            set { m7 = value; OnChangeProperty("M7"); }
+            get { return m[7]; }
+            set { m[7] = value; OnChangeProperty("M7"); }
         }
-
         public bool M8
         {
-            get { return m8; }
-            set { m8 = value; OnChangeProperty("M8"); }
+            get { return m[8]; }
+            set { m[8] = value; OnChangeProperty("M8"); }
         }
-
         public bool M9
         {
-            get { return m9; }
-            set { m9 = value; OnChangeProperty("M9"); }
+            get { return m[9]; }
+            set { m[9] = value; OnChangeProperty("M9"); }
         }
-
         public bool M10
         {
-            get { return m10; }
-            set { m10 = value; OnChangeProperty("M10"); }
+            get { return m[10]; }
+            set { m[10] = value; OnChangeProperty("M10"); }
         }
-
         public bool M11
         {
-            get { return m11; }
-            set { m11 = value; OnChangeProperty("M11"); }
+            get { return m[11]; }
+            set { m[11] = value; OnChangeProperty("M11"); }
         }
-
         public bool M12
         {
-            get { return m12; }
-            set { m12 = value; OnChangeProperty("M12"); }
+            get { return m[12]; }
+            set { m[12] = value; OnChangeProperty("M12"); }
         }
-
         public bool M13
         {
-            get { return m13; }
-            set { m13 = value; OnChangeProperty("M13"); }
+            get { return m[13]; }
+            set { m[13] = value; OnChangeProperty("M13"); }
         }
-
         public bool M14
         {
-            get { return m14; }
-            set { m14 = value; OnChangeProperty("M14"); }
+            get { return m[14]; }
+            set { m[14] = value; OnChangeProperty("M14"); }
         }
-
         public bool M15
         {
-            get { return m15; }
-            set { m15 = value; OnChangeProperty("M15"); }
+            get { return m[15]; }
+            set { m[15] = value; OnChangeProperty("M15"); }
         }
-
         public bool M16
         {
-            get { return m16; }
-            set { m16 = value; OnChangeProperty("M16"); }
+            get { return m[16]; }
+            set { m[16] = value; OnChangeProperty("M16"); }
         }
-
         public bool M17
         {
-            get { return m17; }
-            set { m17 = value; OnChangeProperty("M17"); }
+            get { return m[17]; }
+            set { m[17] = value; OnChangeProperty("M17"); }
         }
-
         public bool M18
         {
-            get { return m18; }
-            set { m18 = value; OnChangeProperty("M18"); }
+            get { return m[18]; }
+            set { m[18] = value; OnChangeProperty("M18"); }
         }
-
         public bool M19
         {
-            get { return m19; }
-            set { m19 = value; OnChangeProperty("M19"); }
+            get { return m[19]; }
+            set { m[19] = value; OnChangeProperty("M19"); }
         }
-
-        /// <summary>
-        /// ######################################################################################################
-        /// </summary>
         public bool M20
         {
-            get { return m20; }
-            set { m20 = value; OnChangeProperty("M20"); }
+            get { return m[20]; }
+            set { m[20] = value; OnChangeProperty("M20"); }
         }
-
         public bool M21
         {
-            get { return m21; }
-            set { m21 = value; OnChangeProperty("M21"); }
+            get { return m[21]; }
+            set { m[21] = value; OnChangeProperty("M21"); }
         }
-
         public bool M22
         {
-            get { return m22; }
-            set { m22 = value; OnChangeProperty("M22"); }
+            get { return m[22]; }
+            set { m[22] = value; OnChangeProperty("M22"); }
         }
-
         public bool M23
         {
-            get { return m23; }
-            set { m23 = value; OnChangeProperty("M23"); }
+            get { return m[23]; }
+            set { m[23] = value; OnChangeProperty("M23"); }
         }
-
-        /// <summary>
-        /// ######################################################################################################
-        /// </summary>
         public bool M30
         {
-            get { return m30; }
-            set { m30 = value; OnChangeProperty("M30"); }
+            get { return m[30]; }
+            set { m[30] = value; OnChangeProperty("M30"); }
         }
-
         public bool M31
         {
-            get { return m31; }
-            set { m31 = value; OnChangeProperty("M31"); }
+            get { return m[31]; }
+            set { m[31] = value; OnChangeProperty("M31"); }
         }
-
         public bool M32
         {
-            get { return m32; }
-            set { m32 = value; OnChangeProperty("M32"); }
+            get { return m[32]; }
+            set { m[32] = value; OnChangeProperty("M32"); }
         }
-
         public bool M33
         {
-            get { return m33; }
-            set { m33 = value; OnChangeProperty("M33"); }
+            get { return m[33]; }
+            set { m[33] = value; OnChangeProperty("M33"); }
         }
-
-        /// <summary>
-        /// ######################################################################################################
-        /// </summary>
-        public bool M51
+        public bool M41
         {
-            get { return m51; }
-            set { m51 = value; OnChangeProperty("M51"); }
+            get { return m[41]; }
+            set { m[41] = value; OnChangeProperty("M41"); }
         }
-
-        public bool M52
+        public bool M42
         {
-            get { return m52; }
-            set { m52 = value; OnChangeProperty("M52"); }
+            get { return m[42]; }
+            set { m[42] = value; OnChangeProperty("M42"); }
         }
-
-        public bool M53
+        public bool M43
         {
-            get { return m53; }
-            set { m53 = value; OnChangeProperty("M53"); }
+            get { return m[43]; }
+            set { m[43] = value; OnChangeProperty("M43"); }
         }
-
-        public bool M54
+        public bool M44
         {
-            get { return m54; }
-            set { m54 = value; OnChangeProperty("M54"); }
+            get { return m[44]; }
+            set { m[44] = value; OnChangeProperty("M44"); }
         }
 
-        /// <summary>
-        /// ######################################################################################################
-        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnChangeProperty(string info)
         {
-            PropertyChanged?.Invoke(PropertyChanged, new PropertyChangedEventArgs(info));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
         }
     }
 }

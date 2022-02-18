@@ -8,9 +8,12 @@
         Title="MainWindow"
         WindowState="Maximized">
 
+    <!--<Window.DataContext>
+        <local: />
+    </Window.DataContext>-->
     <Border BorderBrush="DarkGray" Margin="1" BorderThickness="1">
-
-        <Grid>
+        
+        <Grid Name="demo">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -21,9 +24,7 @@
                 <ColumnDefinition Width="Auto" MinWidth="260" MaxWidth="350" />
             </Grid.ColumnDefinitions>
 
-            <!--#########################################################################################################
-                                                    title header project
-            #########################################################################################################-->
+            <!--################################################### Title header project ######################################################-->
             <Border BorderBrush="DarkGray" BorderThickness="2" Background="DarkCyan" Grid.Row="0" Grid.ColumnSpan="3">
                 <DockPanel VerticalAlignment="Center">
                     <TextBlock FontSize="20" TextAlignment="Center" DockPanel.Dock="Top"><Bold>CENTRAL WATER TREATMENT SYSTEM</Bold></TextBlock>
@@ -31,9 +32,8 @@
                 </DockPanel>
             </Border>
 
-            <!--#########################################################################################################
-                                                    dislay animation
-            #########################################################################################################-->
+                                                   
+            <!--################################################# Dislay animation ########################################################-->
             <Border Background="White" BorderBrush="DarkGray" BorderThickness="1" Grid.Row="1" Grid.Column="0">
                 <Canvas>
                     <Canvas.RenderTransform>
@@ -55,23 +55,12 @@
                     <!--<ContentControl ContentTemplate="{StaticResource Van}" />-->
                     <!--<ContentControl ContentTemplate="{StaticResource Sensor}" />-->
                 </Canvas>
-
             </Border>
 
             <!--GripSplutter-->
-            <!--<GridSplitter Grid.Row="1" Grid.Column="1" Width="1" HorizontalAlignment="Stretch"/>-->
-
-
-
-
-
-
-
-
-
-            <!--#########################################################################################################
-                                                   Control bar
-            #########################################################################################################-->
+            <GridSplitter Grid.Row="1" Grid.Column="1" Width="1" HorizontalAlignment="Stretch"/>
+                                                   
+            <!--################################################### Control bar #####################################################-->
             <Border BorderBrush="DarkGray" BorderThickness="1" Grid.Row="1" Grid.Column="2">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -124,7 +113,7 @@
                         </Grid>
                     </Border>
 
-                    <!--address and port TM221CE40R | Row 1-->
+                    <!--address and port TM221CE40R | Row 2-->
                     <Border Grid.Row="2" Background="Gray" Padding="5,3">
                         <!--Connect TM221CE40E: ip and port-->
                         <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -144,7 +133,7 @@
                         </StackPanel>
                     </Border>
 
-                    <!--Control eventer1 and pumb 1 | Row 4-->
+                    <!--Control eventer 1 and pumb 1 | Row 4-->
                     <Border Grid.Row="4" Background="Gray" Padding="5">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -278,11 +267,10 @@
                         <TextBlock FontSize="15"
                                 Foreground="Black" HorizontalAlignment="Center" Margin="5"><Bold>Status Panel</Bold></TextBlock>
                     </Border>
-                    <!--status error | Row 8-->
 
-
+                    <!--Status panel | Row 9-->
                     <Border Grid.Row="9" Background="Gray" Margin="0,0,0, -325" Padding="5">
-                        <Grid Background="Gray">
+                        <Grid Background="Gray" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*"/>
@@ -319,9 +307,10 @@
                             </Canvas>
 
                             <TextBlock Grid.Row="2" Grid.Column="0" Text="Error protect phase"/>
-                            <Canvas Grid.Row="2" Grid.Column="1">
+                            <Label Name="testName" Grid.Row="2" Grid.Column="1" Content="{Binding M0}" />
+                            <!--<Canvas Grid.Row="2" Grid.Column="1">
                                 <Rectangle Width="10" Height="10" Fill="Black"/>
-                            </Canvas>
+                            </Canvas>-->
 
                             <TextBlock Grid.Row="3" Grid.Column="0" Text="Error Clean Water Pumb 1"/>
                             <Canvas Grid.Row="3" Grid.Column="1">
