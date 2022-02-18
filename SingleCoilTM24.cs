@@ -7,90 +7,62 @@ using System.ComponentModel;
 
 namespace Scada_TM221_WaterFllow
 {
-    internal class SingleCoilTM24 : INotifyPropertyChanged
+    public class SingleCoilTM24 : INotifyPropertyChanged
     {
-        /// <summary>
-        /// Low water
-        /// </summary>
-        private bool m1;
-        /// <summary>
-        /// Mode Auto
-        /// </summary>
-        private bool m2;
-        /// <summary>
-        /// Mode Man
-        /// </summary>
-        private bool m3;
-        /// <summary>
-        /// Protect phase
-        /// </summary>
-        private bool m4;
-        /// <summary>
-        /// Run Soft stater 1
-        /// </summary>
-        private bool m5;
-        /// <summary>
-        /// Run soft stater 2
-        /// </summary>
-        private bool m6;
-        /// <summary>
-        /// Error pumb 1
-        /// </summary>
-        private bool m7;
-        /// <summary>
-        /// Error pumb 2
-        /// </summary>
-        private bool m8;
+        private readonly bool[] m = new bool[15];
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public bool M1
         {
-            get { return m1; }
-            set { m1 = value;  OnChangeProperty("M1"); }
+            get { return m[1]; }
+            set { m[1] = value;  OnChangeProperty("M1"); }
         }
-
         public bool M2
         {
-            get { return m2; }
-            set { m2 = value; OnChangeProperty("M2"); }
+            get { return m[2]; }
+            set { m[2] = value; OnChangeProperty("M2"); }
         }
-
         public bool M3
         {
-            get { return m3; }
-            set { m3 = value; OnChangeProperty("M3"); }
+            get { return m[3]; }
+            set { m[3] = value; OnChangeProperty("M3"); }
         }
-
         public bool M4
         {
-            get { return m4; }
-            set { m4 = value; OnChangeProperty("M4"); }
+            get { return m[4]; }
+            set { m[4] = value; OnChangeProperty("M4"); }
         }
-
         public bool M5
         {
-            get { return m5; }
-            set { m5 = value; OnChangeProperty("M5"); }
+            get { return m[5]; }
+            set { m[5] = value; OnChangeProperty("M5"); }
         }
-
         public bool M6
         {
-            get { return m6; }
-            set { m6 = value; OnChangeProperty("M6"); }
+            get { return m[6]; }
+            set { m[6] = value; OnChangeProperty("M6"); }
         }
-
         public bool M7
         {
-            get { return m7; }
-            set { m7 = value; OnChangeProperty("M7"); }
+            get { return m[7]; }
+            set { m[7] = value; OnChangeProperty("M7"); }
         }
-
         public bool M8
         {
-            get { return m8; }
-            set { m8 = value; OnChangeProperty("M8"); }
+            get { return m[8]; }
+            set { m[8] = value; OnChangeProperty("M8"); }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        public bool M11
+        {
+            get { return m[11]; }
+            set { m[11] = value; OnChangeProperty("M11"); }
+        }
+        public bool M12
+        {
+            get { return m[12]; }
+            set { m[12] = value; OnChangeProperty("M12"); }
+        }
+        
         public void OnChangeProperty(string info)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
