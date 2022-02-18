@@ -9,9 +9,19 @@ namespace Scada_TM221_WaterFllow
 {
     public class SingleCoilTM40 : INotifyPropertyChanged
     {
-        private readonly bool[] m;
-        private readonly ushort[] mw;
-        public SingleCoilTM40() { }
+        private readonly bool[] m = new bool[60];
+        private readonly ushort[] mw = new ushort[10];
+        public event PropertyChangedEventHandler PropertyChanged;
+        public SingleCoilTM40() 
+        {
+            MW1 = 25;
+            MW2 = 25;
+            MW3 = 35;
+        }
+
+        /// <summary>
+        /// Mapping memory
+        /// </summary>
         public ushort MW0
         {
             get { return mw[0]; }
@@ -32,6 +42,7 @@ namespace Scada_TM221_WaterFllow
             get { return mw[3]; }
             set { mw[3] = value; OnChangeProperty("MW3"); }
         }
+        
         public bool M0
         {
             get { return m[0]; }
@@ -97,11 +108,6 @@ namespace Scada_TM221_WaterFllow
             get { return m[12]; }
             set { m[12] = value; OnChangeProperty("M12"); }
         }
-        public bool M13
-        {
-            get { return m[13]; }
-            set { m[13] = value; OnChangeProperty("M13"); }
-        }
         public bool M14
         {
             get { return m[14]; }
@@ -132,11 +138,10 @@ namespace Scada_TM221_WaterFllow
             get { return m[19]; }
             set { m[19] = value; OnChangeProperty("M19"); }
         }
-        public bool M20
-        {
-            get { return m[20]; }
-            set { m[20] = value; OnChangeProperty("M20"); }
-        }
+
+        /// <summary>
+        /// Start/Stop Eventer and water clean pumb Mode MAN
+        /// </summary>
         public bool M21
         {
             get { return m[21]; }
@@ -152,11 +157,15 @@ namespace Scada_TM221_WaterFllow
             get { return m[23]; }
             set { m[23] = value; OnChangeProperty("M23"); }
         }
-        public bool M30
+        public bool M24
         {
-            get { return m[30]; }
-            set { m[30] = value; OnChangeProperty("M30"); }
+            get { return m[24]; }
+            set { m[24] = value; OnChangeProperty("M24"); }
         }
+
+        /// <summary>
+        /// Start/Stop Eventer and water clean pumb Mode Auto
+        /// </summary>
         public bool M31
         {
             get { return m[31]; }
@@ -172,6 +181,15 @@ namespace Scada_TM221_WaterFllow
             get { return m[33]; }
             set { m[33] = value; OnChangeProperty("M33"); }
         }
+        public bool M34
+        {
+            get { return m[34]; }
+            set { m[34] = value; OnChangeProperty("M34"); }
+        }
+        
+        /// <summary>
+        /// Start/Stop javen pumb and khuay
+        /// </summary>
         public bool M41
         {
             get { return m[41]; }
@@ -193,8 +211,30 @@ namespace Scada_TM221_WaterFllow
             set { m[44] = value; OnChangeProperty("M44"); }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        /// <summary>
+        /// Protect and Mode operation
+        /// </summary>
+        public bool M51
+        {
+            get { return m[51]; }
+            set { m[51] = value; OnChangeProperty("M51"); }
+        }
+        public bool M52
+        {
+            get { return m[52]; }
+            set { m[52] = value; OnChangeProperty("M52"); }
+        }
+        public bool M53
+        {
+            get { return m[53]; }
+            set { m[53] = value; OnChangeProperty("M53"); }
+        }
+        public bool M54
+        {
+            get { return m[54]; }
+            set { m[54] = value; OnChangeProperty("M54"); }
+        }
+        
         public void OnChangeProperty(string info)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
