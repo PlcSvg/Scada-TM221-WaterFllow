@@ -66,10 +66,9 @@
                         <RowDefinition Height="Auto" x:Name="sc2"/>
                         <RowDefinition Height="Auto" x:Name="sc3"/>
                         <RowDefinition Height="Auto" x:Name="sc4"/>
-                        <RowDefinition Height="Auto" x:Name="sc5"/>
+                        <RowDefinition Height="160" x:Name="sc5"/>
                         <RowDefinition Height="Auto" x:Name="sc6"/>
-                        <RowDefinition Height="160" x:Name="sc7"/>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40" x:Name="sc7"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="120"/>
@@ -110,52 +109,8 @@
                             <Button  Grid.Row="0" HorizontalAlignment="Right" Name="Btplc40off" Click="DisconnectTM40" Width="80" Background="DodgerBlue">Disconnect</Button>
                         </StackPanel>
                     </Border>
-                    <!--Row 2 ++++++++++++++++++++++++++++++++++ Mode Man ++++++++++++++++++++++++++++++-->
+                    <!--Row 2 ++++++++++++++++++++++++++++++++++ Control Eventer 1 and Pumb 2 ++++++++++++++++-->
                     <Border Grid.Row="2" >
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Row="0" Grid.Column="0" ><Bold>Mode Man</Bold></TextBlock>
-                            <Button Grid.Row="0" Grid.Column="2"  Name="BtMan" Click="ManTM40" Background="DodgerBlue">Man</Button>
-                        </Grid>
-                    </Border>
-
-
-
-
-                    <!--Row 2 ++++++++++++++++++++++++++++++++++ Mode Auto ++++++++++++++++++++++++++++++-->
-                    <Border Grid.Row="3" >
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Row="0" Grid.Column="0" ><Bold>Mode Auto</Bold></TextBlock>
-                            <Button Grid.Row="0" Grid.Column="2"  Name="BtAuto" Click="AutoTM40" Background="DodgerBlue">Auto</Button>
-                            <TextBlock Grid.Row="1" Grid.Column="0" ><Bold>Pressure</Bold></TextBlock>
-                            <Slider Grid.Row="1" Grid.Column ="1"               
-                                Orientation="Horizontal" HorizontalAlignment="Center"
-                                Minimum="3" Maximum="5" Width="50"
-                                TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"
-                                Value="{Binding MW3, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding MW3}" TextAlignment="Left" Width="20" />
-                            <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right">bar</TextBlock>
-                        </Grid>
-                    </Border>
-                    
-                    
-
-
-                    <!--Row 4 ++++++++++++++++++++++++++++++++++ Control Eventer 1 and Pumb 2 ++++++++++++++++-->
-                    <Border Grid.Row="4" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -182,8 +137,8 @@
                             <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right">hz</TextBlock>
                         </Grid>
                     </Border>
-                    <!--Row 5 ++++++++++++++++++++++++++++++++++ Control Eventer 2 and Pumb 2 ++++++++++++++++-->
-                    <Border Grid.Row="5" >
+                    <!--Row 3 ++++++++++++++++++++++++++++++++++ Control Eventer 2 and Pumb 2 ++++++++++++++++-->
+                    <Border Grid.Row="3" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -211,8 +166,8 @@
                             <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right">hz</TextBlock>
                         </Grid>
                     </Border>
-                    <!--Row 6 ++++++++++++++++++++++++++++++++++ Control Pumb 3~6 ++++++++++++++++++++++++++++-->
-                    <Border Grid.Row="6" >
+                    <!--Row 4 ++++++++++++++++++++++++++++++++++ Control Pumb 3~6 ++++++++++++++++++++++++++++-->
+                    <Border Grid.Row="4" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -239,8 +194,8 @@
                             <Button Grid.Column="2" Grid.Row="3" Name="BtPumb6off" Click="Pumb_Khuay_6_Off" Background="Red">Stop</Button>
                         </Grid>
                     </Border>
-                    <!-- Row 7 ++++++++++++++++++++++++++++++++++ status +++++++++++++++++++++++++++++++++++++-->
-                    <Border Grid.Row="7" Background="Gray">
+                    <!-- Row 5++++++++++++++++++++++++++++++++++ status +++++++++++++++++++++++++++++++++++++-->
+                    <Border Grid.Row="5" Background="Gray">
                         <Grid Background="Gray" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -258,9 +213,8 @@
                                 <Style TargetType="{x:Type Rectangle}">
                                     <Setter Property="Canvas.Right" Value="20"/>
                                     <Setter Property="Canvas.Top" Value="3"/>
-                                    <Setter Property="Height" Value="10"/>
-                                    <Setter Property="Width" Value="10"/>
-                                    <Setter Property="Fill" Value="MediumSpringGreen"/>
+                                    <Setter Property="Height" Value="12"/>
+                                    <Setter Property="Width" Value="12"/>
                                 </Style>
                                 <Style TargetType="{x:Type DockPanel}">
                                     <Setter Property="VerticalAlignment" Value="Center" />
@@ -274,41 +228,75 @@
                             <DockPanel Grid.Row="1">
                                 <TextBlock><Bold>Hight water tank 1</Bold></TextBlock>
                                 <Canvas>
-                                    <Rectangle />
+                                    <Rectangle >
+                                        <Rectangle.Fill>
+                                            <SolidColorBrush x:Name="AnimationHightWaterTank"/>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
                                 </Canvas>
                             </DockPanel>
                             <DockPanel Grid.Row="2">
                                 <TextBlock><Bold>Low water tank 1</Bold></TextBlock>
                                 <Canvas>
-                                    <Rectangle/>
+                                    <Rectangle>
+                                        <Rectangle.Fill>
+                                            <SolidColorBrush x:Name="AnimationLowtWaterTank" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
                                 </Canvas>
                             </DockPanel>
                             <DockPanel Grid.Row="3">
                                 <TextBlock><Bold>Error phase station 1</Bold></TextBlock>
                                 <Canvas>
-                                    <Rectangle/>
+                                    <Rectangle>
+                                        <Rectangle.Fill>
+                                            <SolidColorBrush x:Name="AnimationErrorPhaseStation2"/>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
                                 </Canvas>
                             </DockPanel>
                         </Grid>
                     </Border>
-                    
-                    
-                    
-                    
-                    <!-- Row 8 ++++++++++++++++++++++++++++++++++ title +++++++++++++++++++++++++++++++++++++ -->
-                    <Border Grid.Row="8" Background="DarkCyan" BorderBrush="DarkGray" BorderThickness="1" >
+                    <!--Row 6 ++++++++++++++++++++++++++++++++++ Mode Auto ++++++++++++++++++++++++++++++-->
+                    <Border Grid.Row="6" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" ><Bold>Mode Auto</Bold></TextBlock>
+                            <Button Grid.Row="0" Grid.Column="1"  Name="BtAutoOn" Click="AutoTM40On" Background="Green">On</Button>
+                            <Button Grid.Row="0" Grid.Column="2"  Name="BtAutoOff" Click="AutoTM40Off" Background="Red">Off</Button>
+                            <TextBlock Grid.Row="1" Grid.Column="0" ><Bold>Pressure</Bold></TextBlock>
+                            <Slider Grid.Row="1" Grid.Column ="1"               
+                                Orientation="Horizontal" HorizontalAlignment="Center"
+                                Minimum="3" Maximum="5" Width="50"
+                                TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"
+                                Value="{Binding MW3, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding MW3}" TextAlignment="Left" Width="20" />
+                            <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right">bar</TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <!-- Row 7 ++++++++++++++++++++++++++++++++++ title +++++++++++++++++++++++++++++++++++++ -->
+                    <Border Grid.Row="7" Background="DarkCyan" BorderBrush="DarkGray" BorderThickness="1" >
                         <TextBlock FontSize="15" Foreground="Black" HorizontalAlignment="Center"><Bold>Status Panel Station 2</Bold></TextBlock>
                     </Border>
-                    <!--Row 9 ++++++++++++++++++++++++++++++++++ Connect TM221CE24R ++++++++++++++++++++++++++-->
-                    <Border Grid.Row="9" >
+                    <!--Row 8 ++++++++++++++++++++++++++++++++++ Connect TM221CE24R ++++++++++++++++++++++++++-->
+                    <Border Grid.Row="8" >
                         <StackPanel Grid.Row="0" Orientation="Horizontal">
                             <TextBlock  Grid.Row="0" Margin="0, 0, 6, 0"><Bold>Slave TM221CE24R</Bold></TextBlock>
                             <Button  Grid.Row="0" Name="Btplc24on"  Click="ConnectTM24" Width="55" Background="DodgerBlue">Connect</Button>
                             <Button  Grid.Row="0" Name="Btplc24off" Click="DisconnectTM24" Width="80" Background="DodgerBlue">Disconnect</Button>
                         </StackPanel>
                     </Border>
-                    <!--Row 10 ++++++++++++++++++++++++++++++++++ Control tram 1 ++++++++++++++++++++++++++++++-->
-                    <Border Grid.Row="10" >
+                    <!--Row 9 ++++++++++++++++++++++++++++++++++ Control tram 1 ++++++++++++++++++++++++++++++-->
+                    <Border Grid.Row="9" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -329,8 +317,8 @@
                             <Button Grid.Column="2" Grid.Row="1" Name="Btnt2off" Click="Pumb_NT_2_Off" Background="Red">Stop</Button>
                         </Grid>
                     </Border>
-                    <!-- Row 11 ++++++++++++++++++++++++++++++++++ Status ++++++++++++++++++++++++++++++++++++-->
-                    <Border Grid.Row="11" Background="Gray">
+                    <!-- Row 10 ++++++++++++++++++++++++++++++++++ Status ++++++++++++++++++++++++++++++++++++-->
+                    <Border Grid.Row="10" Background="Gray">
                         <Grid Background="Gray" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
