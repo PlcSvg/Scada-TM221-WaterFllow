@@ -8,10 +8,12 @@
         Title="MainWindow"
         WindowState="Maximized">
 
+    <Window.Resources>
+        <local:SingleCoilTM40 x:Key="t40"/>
+    </Window.Resources>
     <Border BorderBrush="DarkGray" Margin="1" BorderThickness="1">
 
         <Grid>
-            
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -21,10 +23,6 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" MinWidth="260" MaxWidth="350" />
             </Grid.ColumnDefinitions>
-            <Grid.Resources>
-                <local:SingleCoilTM24 x:Key="T24" />
-                <local:SingleCoilTM40 x:Key="T40" />
-            </Grid.Resources>
             <!--=========================== HEADER ===================================== -->
             <Border BorderBrush="DarkGray" BorderThickness="0.5" Background="DarkCyan" Grid.Row="0" Grid.ColumnSpan="2" Height="30">
                 <DockPanel VerticalAlignment="Center">
@@ -59,19 +57,19 @@
             
             <!--=========================== CONTROL BAR ===================================== -->
             <Border BorderBrush="DarkGray" BorderThickness="0.5" Grid.RowSpan="2" Grid.Column="2">
-                <Grid>
+                <Grid >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
-                        <RowDefinition Height="Auto" x:Name="sc1"/>
-                        <RowDefinition Height="Auto" x:Name="sc2"/>
-                        <RowDefinition Height="Auto" x:Name="sc3"/>
-                        <RowDefinition Height="Auto" x:Name="sc4"/>
-                        <RowDefinition Height="160" x:Name="sc5"/>
-                        <RowDefinition Height="Auto" x:Name="sc6"/>
-                        <RowDefinition Height="40" x:Name="sc7"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="160" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="40" />
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="120"/>
+                        <RowDefinition Height="120" />
                     </Grid.RowDefinitions>
                     <Grid.Resources>
                         <Style TargetType="{x:Type Button}">
@@ -96,7 +94,6 @@
                             <Setter Property="Margin" Value="0, 5"/>
                         </Style>
                     </Grid.Resources>
-                    
                     <!-- Row 0 ++++++++++++++++++++++++++++++++++ title +++++++++++++++++++++++++++++ -->
                     <Border Grid.Row="0" Background="DarkCyan" >
                         <TextBlock FontSize="15" Foreground="Black" HorizontalAlignment="Center"><Bold>Control Panel Station 1</Bold></TextBlock>
@@ -105,8 +102,8 @@
                     <Border Grid.Row="1" >
                         <StackPanel Grid.Row="0" Orientation="Horizontal">
                             <TextBlock  Grid.Row="0" Margin="0, 0, 6, 0"><Bold>Slave TM221CE40R</Bold></TextBlock>
-                            <Button  Grid.Row="0" HorizontalAlignment="Right" Name="Btplc40on" Click="ConnectTM40" Width="55" Background="DodgerBlue">Connect</Button>
-                            <Button  Grid.Row="0" HorizontalAlignment="Right" Name="Btplc40off" Click="DisconnectTM40" Width="80" Background="DodgerBlue">Disconnect</Button>
+                            <Button  Grid.Row="0" Name="Btplc40on" Click="ConnectTM40" Width="55" Background="DodgerBlue">Connect</Button>
+                            <Button  Grid.Row="0" Name="Btplc40off" Click="DisconnectTM40" Width="80" Background="DodgerBlue">Disconnect</Button>
                         </StackPanel>
                     </Border>
                     <!--Row 2 ++++++++++++++++++++++++++++++++++ Control Eventer 1 and Pumb 2 ++++++++++++++++-->
@@ -123,17 +120,18 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Grid.Row="0"><Bold>Eventer 1</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="0" Name="BtEventer1on" Click="Eventer_1_On" Background="Green">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="0" Name="BtEventer1off" Click="Eventer_1_Off" Background="red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="0" Name="BtEventer1on" Click="Eventer_1_On" Background="red">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="0" Name="BtEventer1off" Click="Eventer_1_Off" Background="Green">Stop</Button>
                             <TextBlock Grid.Column="0" Grid.Row="1"><Bold>Clean Water Pumb 1</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="1" Name="BtPumb1on" Click="Pumb_1_On" Background="Green">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="1" Name="BtPumb1off" Click="Pumb_1_Off" Background="red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="1" Name="BtPumb1on" Click="Pumb_1_On" Background="Red">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="1" Name="BtPumb1off" Click="Pumb_1_Off" Background="Green"
+                                    >Stop</Button>
                             <TextBlock Grid.Column="0" Grid.Row="2"><Bold>Frequency</Bold></TextBlock>
                             <Slider Name="frequency1" Grid.Column="1" Grid.Row="2" Orientation="Horizontal"
-                                HorizontalAlignment="Center" Minimum="25" Maximum="50" Width="50"
+                                HorizontalAlignment="Center" Minimum="30" Maximum="50" Width="50"
                                 TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" 
-                                Value="{Binding MW1, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Column="2" Grid.Row="2" Name="Boxfrequency1" Text="{Binding MW1}" TextAlignment="Center" Width="20"/>
+                                Value="{Binding Source={StaticResource t40}, Path=MW1, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Source={StaticResource t40}, Path=MW1}" TextAlignment="Center" Width="20"/>
                             <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right">hz</TextBlock>
                         </Grid>
                     </Border>
@@ -151,18 +149,18 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Grid.Row="0"><Bold>Eventer 2</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="0" Name="BtEventer2on" Click="Eventer_2_On" Background="Green">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="0" Name="BtEventer2off" Click="Eventer_2_Off" Background="red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="0" Name="BtEventer2on" Click="Eventer_2_On" Background="red">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="0" Name="BtEventer2off" Click="Eventer_2_Off" Background="Green">Stop</Button>
                             <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"><Bold>Clean Water Pumb 2</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="1" Name="BtPumb2on" Click="Pumb_2_On" Background="Green">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="1" Name="BtPumb2off" Click="Pumb_2_Off" Background="red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="1" Name="BtPumb2on" Click="Pumb_2_On" Background="Red">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="1" Name="BtPumb2off" Click="Pumb_2_Off" Background="Green">Stop</Button>
                             <TextBlock Grid.Row="2" Grid.Column="0" ><Bold>Frequency</Bold> (Hz)</TextBlock>
                             <Slider Name="frequency2" Grid.Row="2" Grid.Column ="1"               
                                 Orientation="Horizontal" HorizontalAlignment="Center"
-                                Minimum="25" Maximum="50" Width="50"
+                                Minimum="30" Maximum="50" Width="50"
                                 TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True"
-                                Value="{Binding MW2, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="2" Grid.Column="2" Name="Boxfrequency2" Text="{Binding MW2}" TextAlignment="Center" Width="20" />
+                                Value="{Binding Source={StaticResource t40}, Path=MW2, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="2" Name="Boxfrequency2" Text="{Binding Source={StaticResource t40}, Path=MW2}" TextAlignment="Center" Width="20" />
                             <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right">hz</TextBlock>
                         </Grid>
                     </Border>
@@ -181,17 +179,17 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Grid.Row="0"><Bold>Pumb Javen 3</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="0" Name="BtPumb3on" Click="Pumb_Javen_3_On" Background="Green">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="0" Name="BtPumb3off" Click="Pumb_Javen_3_Off" Background="Red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="0" Name="BtPumb3on" Click="Pumb_Javen_3_On" Background="Red">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="0" Name="BtPumb3off" Click="Pumb_Javen_3_Off" Background="Green">Stop</Button>
                             <TextBlock Grid.Column="0" Grid.Row="1" ><Bold>Pumb Javen 4</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="1" Name="BtPumb4on" Click="Pumb_Javen_4_On" Background="Green" >Start</Button>
-                            <Button Grid.Column="2" Grid.Row="1" Name="BtPumb4off" Click="Pumb_Javen_4_Off" Background="Red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="1" Name="BtPumb4on" Click="Pumb_Javen_4_On" Background="Red" >Start</Button>
+                            <Button Grid.Column="2" Grid.Row="1" Name="BtPumb4off" Click="Pumb_Javen_4_Off" Background="Green">Stop</Button>
                             <TextBlock Grid.Column="0" Grid.Row="2" ><Bold>Stirring Pumb 5</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="2" Name="BtPumb5on" Click="Pumb_Khuay_5_On" Background="Green">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="2" Name="BtPumb5off" Click="Pumb_Khuay_5_Off" Background="Red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="2" Name="BtPumb5on" Click="Pumb_Khuay_5_On" Background="Red">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="2" Name="BtPumb5off" Click="Pumb_Khuay_5_Off" Background="Green">Stop</Button>
                             <TextBlock Grid.Column="0" Grid.Row="3" ><Bold>Stirring Pumb 6</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="3" Name="BtPumb6on" Click="Pumb_Khuay_6_On" Background="Green">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="3" Name="BtPumb6off" Click="Pumb_Khuay_6_Off" Background="Red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="3" Name="BtPumb6on" Click="Pumb_Khuay_6_On" Background="Red">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="3" Name="BtPumb6off" Click="Pumb_Khuay_6_Off" Background="Green">Stop</Button>
                         </Grid>
                     </Border>
                     <!-- Row 5++++++++++++++++++++++++++++++++++ status +++++++++++++++++++++++++++++++++++++-->
@@ -222,7 +220,7 @@
                             </Grid.Resources>
                             <DockPanel Grid.Row="0">
                                 <TextBlock><Bold>Persure Pipe</Bold></TextBlock>
-                                <TextBlock Text="{Binding MW0}" HorizontalAlignment="Right" Margin="0, 0, -160, 0"/>
+                                <TextBlock Text="{Binding Source={StaticResource t40}, Path=MW4}" HorizontalAlignment="Right" Margin="0, 0, -160, 0"/>
                                 <TextBlock HorizontalAlignment="Right">hz</TextBlock>
                             </DockPanel>
                             <DockPanel Grid.Row="1">
@@ -270,19 +268,18 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" ><Bold>Mode Auto</Bold></TextBlock>
-                            <Button Grid.Row="0" Grid.Column="1"  Name="BtAutoOn" Click="AutoTM40On" Background="Green">On</Button>
-                            <Button Grid.Row="0" Grid.Column="2"  Name="BtAutoOff" Click="AutoTM40Off" Background="Red">Off</Button>
+                            <Button Grid.Row="0" Grid.Column="1"  Name="BtAutoOn" Click="AutoTM40On" Background="Red">On</Button>
+                            <Button Grid.Row="0" Grid.Column="2"  Name="BtAutoOff" Click="AutoTM40Off" Background="Green">Off</Button>
                             <TextBlock Grid.Row="1" Grid.Column="0" ><Bold>Pressure</Bold></TextBlock>
                             <Slider Grid.Row="1" Grid.Column ="1"               
                                 Orientation="Horizontal" HorizontalAlignment="Center"
                                 Minimum="3" Maximum="5" Width="50"
-                                TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"
-                                Value="{Binding MW3, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding MW3}" TextAlignment="Left" Width="20" />
+                                TickPlacement="BottomRight" TickFrequency="0.2" IsSnapToTickEnabled="True"
+                                Value="{Binding Source={StaticResource t40}, Path=MW3, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding Source={StaticResource t40}, Path=MW3}" TextAlignment="Left" Width="20" />
                             <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right">bar</TextBlock>
                         </Grid>
                     </Border>
-
                     <!-- Row 7 ++++++++++++++++++++++++++++++++++ title +++++++++++++++++++++++++++++++++++++ -->
                     <Border Grid.Row="7" Background="DarkCyan" BorderBrush="DarkGray" BorderThickness="1" >
                         <TextBlock FontSize="15" Foreground="Black" HorizontalAlignment="Center"><Bold>Status Panel Station 2</Bold></TextBlock>
@@ -309,12 +306,12 @@
                             </Grid.ColumnDefinitions>
                             <!--Raw water pumb 1-->
                             <TextBlock Grid.Column="0" Grid.Row="0"><Bold>Raw Water Pumb 1</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="0" Name="Btnt1on" Click="Pumb_NT_1_On" Background="Green">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="0" Name="Btnt1off" Click="Pumb_NT_1_Off" Background="Red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="0" Name="Btnt1on" Click="Pumb_NT_1_On" Background="Red">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="0" Name="Btnt1off" Click="Pumb_NT_1_Off" Background="Green">Stop</Button>
                             <!--Raw water pumb 2-->
                             <TextBlock Grid.Column="0" Grid.Row="1" ><Bold>Raw Water Pumb 2</Bold></TextBlock>
-                            <Button Grid.Column="1" Grid.Row="1" Name="Btnt2on" Click="Pumb_NT_2_On" Background="Green">Start</Button>
-                            <Button Grid.Column="2" Grid.Row="1" Name="Btnt2off" Click="Pumb_NT_2_Off" Background="Red">Stop</Button>
+                            <Button Grid.Column="1" Grid.Row="1" Name="Btnt2on" Click="Pumb_NT_2_On" Background="Red">Start</Button>
+                            <Button Grid.Column="2" Grid.Row="1" Name="Btnt2off" Click="Pumb_NT_2_Off" Background="Green">Stop</Button>
                         </Grid>
                     </Border>
                     <!-- Row 10 ++++++++++++++++++++++++++++++++++ Status ++++++++++++++++++++++++++++++++++++-->

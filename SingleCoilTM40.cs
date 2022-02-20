@@ -9,40 +9,44 @@ namespace Scada_TM221_WaterFllow
 {
     public class SingleCoilTM40 : INotifyPropertyChanged
     {
-        private readonly bool[] m = new bool[60];
-        private readonly ushort[] mw = new ushort[10];
+        private bool[] m = new bool[60];
+        private int[] mw = new int[3];
+        private int mw3;
+        private int mw4;
         public event PropertyChangedEventHandler PropertyChanged;
         public SingleCoilTM40() 
         {
-            MW1 = 25;
-            MW2 = 25;
-            MW3 = 35;
         }
 
         /// <summary>
         /// Mapping memory
         /// </summary>
-        public ushort MW0
+        public int MW0
         {
             get { return mw[0]; }
             set { mw[0] = value; OnChangeProperty("MW0"); }
         }
-        public ushort MW1
+        public int MW1
         {
             get { return mw[1]; }
             set { mw[1] = value; OnChangeProperty("MW1"); }
         }
-        public ushort MW2
+        public int MW2
         {
             get { return mw[2]; }
             set { mw[2] = value; OnChangeProperty("MW2"); }
         }
-        public ushort MW3
+        public int MW3
         {
-            get { return mw[3]; }
-            set { mw[3] = value; OnChangeProperty("MW3"); }
+            get { return mw3; }
+            set { mw3 = value; OnChangeProperty("MW3"); }
         }
-        
+        public int MW4
+        {
+            get { return mw4; }
+            set { mw4 = value; OnChangeProperty("MW4"); }
+        }
+
         public bool M0
         {
             get { return m[0]; }

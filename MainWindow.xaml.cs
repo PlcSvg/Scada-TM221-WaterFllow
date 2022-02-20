@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using EasyModbus;
+using System.Timers;
 
 namespace Scada_TM221_WaterFllow
 {
@@ -26,27 +27,26 @@ namespace Scada_TM221_WaterFllow
         public ModbusClient modbusClientTM24 = new ModbusClient();
         public SingleCoilTM40 singleCoilTM40 = new SingleCoilTM40();
         public SingleCoilTM24 singleCoilTM24 = new SingleCoilTM24();
+        
         public MainWindow()
         {
             InitializeComponent();
             BeginEnableButton();
 
+            modbusClientTM40.UnitIdentifier = 1;
+            modbusClientTM40.Baudrate = 19200;
+            modbusClientTM40.Parity = System.IO.Ports.Parity.None;
+            modbusClientTM40.StopBits = System.IO.Ports.StopBits.Two;
+            modbusClientTM40.ConnectionTimeout = 500;
 
-            sc1.DataContext = singleCoilTM40;
-            sc2.DataContext = singleCoilTM40;
-            sc3.DataContext = singleCoilTM40;
-            sc4.DataContext = singleCoilTM40;
-            sc5.DataContext = singleCoilTM40;
-            sc6.DataContext = singleCoilTM40;
-            sc7.DataContext = singleCoilTM40;
+            modbusClientTM24.UnitIdentifier = 1;
+            modbusClientTM24.Baudrate = 19200;
+            modbusClientTM24.Parity = System.IO.Ports.Parity.None;
+            modbusClientTM24.StopBits = System.IO.Ports.StopBits.Two;
+            modbusClientTM24.ConnectionTimeout = 500;
 
-            //SourceControlTM24.DataContext = singleCoilTM24;
-            //SourceStatusTM24.DataContext = singleCoilTM24;
-            //SourceTM24.DataContext = singleCoilTM24;
+            
         }
-
-
-
 
 
         /// <summary>
@@ -85,13 +85,12 @@ namespace Scada_TM221_WaterFllow
             AnimationLowWater.Color = Colors.LightGray;
             ErrorPhaseAnimation.Color = Colors.LightGray;
         }
-
         /// <summary>
         /// Switch Man
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AutoTM40Off(Object sender, RoutedEventArgs e)
+        private void AutoTM40Off(object sender, RoutedEventArgs e)
         {
             if(modbusClientTM40.Connected)
             {
@@ -110,7 +109,6 @@ namespace Scada_TM221_WaterFllow
                 frequency1.IsEnabled = true;
                 frequency2.IsEnabled = true;
             } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
-
         }
         /// <summary>
         /// Switch Auto
@@ -123,6 +121,10 @@ namespace Scada_TM221_WaterFllow
             {
                 modbusClientTM40.WriteSingleCoil(53, false);
                 modbusClientTM40.WriteSingleCoil(54, true);
+                modbusClientTM40.WriteSingleCoil(21, false);
+                modbusClientTM40.WriteSingleCoil(22, false);
+                modbusClientTM40.WriteSingleCoil(23, false);
+                modbusClientTM40.WriteSingleCoil(24, false);
                 BtAutoOn.IsEnabled = false;
                 BtAutoOff.IsEnabled = true;
                 BtEventer1off.IsEnabled = false;
@@ -136,7 +138,6 @@ namespace Scada_TM221_WaterFllow
                 frequency1.IsEnabled = false;
                 frequency2.IsEnabled = false;
             } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
-
         }
         /// <summary>
         /// Connected PLC TM221CE40R
@@ -188,7 +189,6 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         /// <summary>
         /// Timer request read single coil TM221CE40R
         /// </summary>
@@ -200,12 +200,24 @@ namespace Scada_TM221_WaterFllow
             {
                 if (modbusClientTM40.Connected == true)
                 {
+                    singleCoilTM40.M53 = modbusClientTM40.ReadCoils(53, 1)[0];
+                    singleCoilTM40.M54 = modbusClientTM40.ReadCoils(54, 1)[0];
+                    if (singleCoilTM40.M54 == true)
+                    {
+                        BtAutoOn.IsEnabled = false;
+                        BtAutoOff.IsEnabled = true;
+                    }
+                    else
+                    {
+                        BtAutoOn.IsEnabled = true;
+                        BtAutoOff.IsEnabled = false;
+                    }
                     singleCoilTM40.M0 = modbusClientTM40.ReadCoils(0, 1)[0];
                     if (singleCoilTM40.M0 == true)
                     {
                         AnimationErrorPhaseStation2.Color = Color.FromRgb((byte)_rand.Next(255), (byte)_rand.Next(255), (byte)_rand.Next(255));
                     }
-                    else if (singleCoilTM40.M1 == false)
+                    else
                     {
                         AnimationErrorPhaseStation2.Color = Colors.MediumSpringGreen;
                     }
@@ -215,14 +227,14 @@ namespace Scada_TM221_WaterFllow
                         AnimationHightWaterTank.Color = Colors.LightGray;
                         AnimationLowtWaterTank.Color = Color.FromRgb((byte)_rand.Next(255), (byte)_rand.Next(255), (byte)_rand.Next(255));
                     }
-                    else if (singleCoilTM40.M1 == false)
+                    else
                     {
                         AnimationHightWaterTank.Color = Colors.MediumSpringGreen;
                         AnimationLowtWaterTank.Color = Colors.LightGray;
                     }
-                    singleCoilTM40.M2 = modbusClientTM40.ReadCoils(2, 1)[0];
-                    singleCoilTM40.M3 = modbusClientTM40.ReadCoils(3, 1)[0];
-                    singleCoilTM40.M4 = modbusClientTM40.ReadCoils(4, 1)[0];
+                    //singleCoilTM40.M2 = modbusClientTM40.ReadCoils(2, 1)[0];
+                    //singleCoilTM40.M3 = modbusClientTM40.ReadCoils(3, 1)[0];
+                    //singleCoilTM40.M4 = modbusClientTM40.ReadCoils(4, 1)[0];
                     singleCoilTM40.M5 = modbusClientTM40.ReadCoils(5, 1)[0];
                     if (singleCoilTM40.M5 == true)
                     {
@@ -230,7 +242,7 @@ namespace Scada_TM221_WaterFllow
 
                         BtEventer1off.IsEnabled = true;
                     }
-                    else if (singleCoilTM40.M5 == false)
+                    else
                     {
                         BtEventer1on.IsEnabled = true;
                         BtEventer1off.IsEnabled = false;
@@ -242,7 +254,7 @@ namespace Scada_TM221_WaterFllow
 
                         BtEventer2off.IsEnabled = true;
                     }
-                    else if (singleCoilTM40.M6 == false)
+                    else 
                     {
                         BtEventer2on.IsEnabled = true;
                         BtEventer2off.IsEnabled = false;
@@ -254,7 +266,7 @@ namespace Scada_TM221_WaterFllow
 
                         BtPumb1off.IsEnabled = true;
                     }
-                    else if (singleCoilTM40.M7 == false)
+                    else 
                     {
                         BtPumb1on.IsEnabled = true;
                         BtPumb1off.IsEnabled = false;
@@ -266,7 +278,7 @@ namespace Scada_TM221_WaterFllow
 
                         BtPumb2off.IsEnabled = true;
                     }
-                    else if (singleCoilTM40.M8 == false)
+                    else
                     {
                         BtPumb2on.IsEnabled = true;
                         BtPumb2off.IsEnabled = false;
@@ -278,7 +290,7 @@ namespace Scada_TM221_WaterFllow
 
                         BtPumb3off.IsEnabled = true;
                     }
-                    else if (singleCoilTM40.M9 == false)
+                    else 
                     {
                         BtPumb3on.IsEnabled = true;
                         BtPumb3off.IsEnabled = false;
@@ -290,7 +302,7 @@ namespace Scada_TM221_WaterFllow
 
                         BtPumb4off.IsEnabled = true;
                     }
-                    else if (singleCoilTM40.M10 == false)
+                    else
                     {
                         BtPumb4on.IsEnabled = true;
                         BtPumb4off.IsEnabled = false;
@@ -302,7 +314,7 @@ namespace Scada_TM221_WaterFllow
 
                         BtPumb5off.IsEnabled = true;
                     }
-                    else if (singleCoilTM40.M11 == false)
+                    else
                     {
                         BtPumb5on.IsEnabled = true;
                         BtPumb5off.IsEnabled = false;
@@ -314,7 +326,7 @@ namespace Scada_TM221_WaterFllow
 
                         BtPumb6off.IsEnabled = true;
                     }
-                    else if (singleCoilTM40.M12 == false)
+                    else 
                     {
                         BtPumb6on.IsEnabled = true;
                         BtPumb6off.IsEnabled = false;
@@ -325,12 +337,14 @@ namespace Scada_TM221_WaterFllow
                     singleCoilTM40.M17 = modbusClientTM40.ReadCoils(17, 1)[0];
                     singleCoilTM40.M18 = modbusClientTM40.ReadCoils(18, 1)[0];
                     singleCoilTM40.M19 = modbusClientTM40.ReadCoils(19, 1)[0];
-                    singleCoilTM40.M53 = modbusClientTM40.ReadCoils(53, 1)[0];
-                    singleCoilTM40.M54 = modbusClientTM40.ReadCoils(54, 1)[0];
-                } else if (modbusClientTM40.Connected == false)
+                    modbusClientTM40.WriteSingleRegister(1, singleCoilTM40.MW1);
+                    modbusClientTM40.WriteSingleRegister(2, singleCoilTM40.MW2);
+                } else 
                 {
+                    BtAutoOn.IsEnabled = false;
+                    BtAutoOff.IsEnabled = false;
+                    Btplc40on.IsEnabled = true;
                     Btplc40off.IsEnabled = false;
-                    Btplc24off.IsEnabled = false;
                     BtEventer1off.IsEnabled = false;
                     BtEventer1on.IsEnabled = false;
                     BtPumb1off.IsEnabled = false;
@@ -356,9 +370,7 @@ namespace Scada_TM221_WaterFllow
                 modbusClientTM40.Disconnect();
                 MessageBox.Show("Can't connect PLC TM221CE24R, You. Please check your hardware connection!!!");
             }
-
         }
-
         /// <summary>
         /// Power Eventer 1 on
         /// </summary>
@@ -366,12 +378,12 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Eventer_1_On(Object sender, RoutedEventArgs e)
         {
-            if(modbusClientTM40.Connected || singleCoilTM40.M54 == true || singleCoilTM40.M53 == false)
+            if(modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
                 modbusClientTM40.WriteSingleCoil(22, true);
                 BtEventer1on.IsEnabled = false;
                 BtEventer1off.IsEnabled = true;
-            } else MessageBox.Show("You are not connected to PLC TM221CE40R");
+            } else MessageBox.Show("You can't control it because it's running in automatic mode");
         }
         /// <summary>
         /// Power Eventer 1 off
@@ -380,12 +392,12 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Eventer_1_Off(Object sender, RoutedEventArgs e)
         {
-            if (modbusClientTM40.Connected || singleCoilTM40.M54 == true || singleCoilTM40.M53 == false)
+            if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
                 modbusClientTM40.WriteSingleCoil(22, false);
                 BtEventer1off.IsEnabled = false;    
                 BtEventer1on.IsEnabled = true;
-            } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
+            } else { MessageBox.Show("You can't control it because it's running in automatic mode"); }
         }
         /// <summary>
         /// Run pumb 1
@@ -394,12 +406,12 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_1_On(Object sender, RoutedEventArgs e)
         {
-            if (modbusClientTM40.Connected || singleCoilTM40.M54 == true || singleCoilTM40.M53 == false)
+            if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
                 modbusClientTM40.WriteSingleCoil(21, true);
                 BtPumb1on.IsEnabled = false;
                 BtPumb1off.IsEnabled = true;
-            } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
+            } else { MessageBox.Show("You can't control it because it's running in automatic mode"); }
         }
         /// <summary>
         /// Stop pumb 1
@@ -408,12 +420,12 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_1_Off(Object sender, RoutedEventArgs e)
         {
-            if (modbusClientTM40.Connected || singleCoilTM40.M54 == true || singleCoilTM40.M53 == false)
+            if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
                 modbusClientTM40.WriteSingleCoil(21, false);
                 BtPumb1on.IsEnabled = true;
                 BtPumb1off.IsEnabled = false;
-            } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
+            } else { MessageBox.Show("You can't control it because it's running in automatic mode"); }
         }
         /// <summary>
         /// Power Eventer 2 on
@@ -422,13 +434,13 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Eventer_2_On(Object sender, RoutedEventArgs e)
         {
-            if (modbusClientTM40.Connected || singleCoilTM40.M54 == true || singleCoilTM40.M53 == false)
+            if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
                 modbusClientTM40.WriteSingleCoil(24, true);
                 BtEventer2on.IsEnabled = false;
                 BtEventer2off.IsEnabled = true;
 
-            } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
+            } else { MessageBox.Show("You can't control it because it's running in automatic mode"); }
         }
         /// <summary>
         /// Power Eventer 2 off
@@ -437,12 +449,12 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Eventer_2_Off(Object sender, RoutedEventArgs e)
         {
-            if (modbusClientTM40.Connected || singleCoilTM40.M54 == true || singleCoilTM40.M53 == false)
+            if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
                 modbusClientTM40.WriteSingleCoil(24, false);
                 BtEventer2off.IsEnabled = false;
                 BtEventer2on.IsEnabled = true;
-            } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
+            } else { MessageBox.Show("You can't control it because it's running in automatic mode"); }
         }
         /// <summary>
         /// run pumb 2
@@ -451,12 +463,12 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_2_On(Object sender, RoutedEventArgs e)
         {
-            if (modbusClientTM40.Connected || singleCoilTM40.M54 == true || singleCoilTM40.M53 == false)
+            if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
                 modbusClientTM40.WriteSingleCoil(23, true);
                 BtPumb2on.IsEnabled = false;
                 BtPumb2off.IsEnabled = true;
-            } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
+            } else { MessageBox.Show("You can't control it because it's running in automatic mode"); }
         } 
         /// <summary>
         /// stop pumb 2
@@ -465,13 +477,13 @@ namespace Scada_TM221_WaterFllow
         /// <param name="e"></param>
         private void Pumb_2_Off(Object sender, RoutedEventArgs e)
         {
-            if (modbusClientTM40.Connected || singleCoilTM40.M54 == true || singleCoilTM40.M53 == false)
+            if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
                 modbusClientTM40.WriteSingleCoil(23, false);
                 BtPumb2on.IsEnabled = true;
                 BtPumb2off.IsEnabled = false;
 
-            } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
+            } else { MessageBox.Show("You can't control it because it's running in automatic mode"); }
         }
         /// <summary>
         /// Start pumb javen 3
@@ -588,9 +600,6 @@ namespace Scada_TM221_WaterFllow
                 BtPumb6off.IsEnabled = false;
             } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
         }
-
-
-
         private void ConnectTM24(object sender, RoutedEventArgs e)
         {
             try
