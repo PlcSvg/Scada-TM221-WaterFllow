@@ -11,11 +11,13 @@ namespace Scada_TM221_WaterFllow
     {
         private bool[] m = new bool[60];
         private int[] mw = new int[3];
-        private int mw3;
-        private int mw4;
+        private double mw3;
+        private double mw4;
         public event PropertyChangedEventHandler PropertyChanged;
         public SingleCoilTM40() 
         {
+            MW1 = 30;
+            MW2 = 30;
         }
 
         /// <summary>
@@ -36,12 +38,12 @@ namespace Scada_TM221_WaterFllow
             get { return mw[2]; }
             set { mw[2] = value; OnChangeProperty("MW2"); }
         }
-        public int MW3
+        public double MW3
         {
             get { return mw3; }
             set { mw3 = value; OnChangeProperty("MW3"); }
         }
-        public int MW4
+        public double MW4
         {
             get { return mw4; }
             set { mw4 = value; OnChangeProperty("MW4"); }
