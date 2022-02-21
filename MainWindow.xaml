@@ -157,7 +157,7 @@
                                 HorizontalAlignment="Center" Minimum="30" Maximum="50" Width="50"
                                 TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" 
                                 Value="{Binding Path=MW2, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBlock Name="FrequencyPumb1Block2" Grid.Column="2" Grid.Row="2" Text="{Binding MW1}" TextAlignment="Center" Width="20"/>
+                            <TextBlock Name="FrequencyPumb1Block2" Grid.Column="2" Grid.Row="2" Text="{Binding MW2}" TextAlignment="Center" Width="20"/>
                             <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right">hz</TextBlock>
                         </Grid>
                     </Border>

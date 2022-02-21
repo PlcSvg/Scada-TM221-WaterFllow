@@ -24,11 +24,11 @@ namespace Scada_TM221_WaterFllow
     {
         private readonly Random _rand = new Random();
         public ModbusClient modbusClientTM40 = new ModbusClient();
-        //public ModbusClient modbusClientTM24 = new ModbusClient();
-        public ModbusClient modbusClientTM24 = new ModbusClient("192.168.1.15", 502);
+        //public ModbusClient modbusClientTM40 = new ModbusClient("192.168.1.14", 502);
+        public ModbusClient modbusClientTM24 = new ModbusClient();
+        //public ModbusClient modbusClientTM24 = new ModbusClient("192.168.1.15", 502);
         public SingleCoilTM40 singleCoilTM40 = new SingleCoilTM40();
         public SingleCoilTM24 singleCoilTM24 = new SingleCoilTM24();
-        
         public MainWindow()
         {
             InitializeComponent();
@@ -99,8 +99,8 @@ namespace Scada_TM221_WaterFllow
         {
             if(modbusClientTM40.Connected)
             {
-                modbusClientTM40.WriteSingleCoil(53, true);
-                modbusClientTM40.WriteSingleCoil(54, false);
+                modbusClientTM40.WriteSingleCoil(53, false);
+                modbusClientTM40.WriteSingleRegister(13, 0);
                 BtAutoOn.IsEnabled = true;
                 BtAutoOff.IsEnabled = false;
                 BtEventer1off.IsEnabled = false;
@@ -124,8 +124,7 @@ namespace Scada_TM221_WaterFllow
         {
             if(modbusClientTM40.Connected)
             {
-                modbusClientTM40.WriteSingleCoil(53, false);
-                modbusClientTM40.WriteSingleCoil(54, true);
+                modbusClientTM40.WriteSingleCoil(53, true);
                 modbusClientTM40.WriteSingleCoil(21, false);
                 modbusClientTM40.WriteSingleCoil(22, false);
                 modbusClientTM40.WriteSingleCoil(23, false);
@@ -142,7 +141,6 @@ namespace Scada_TM221_WaterFllow
                 BtPumb2off.IsEnabled = false;
                 FrequencyPumb1.IsEnabled = false;
                 FrequencyPumb2.IsEnabled = false;
-                modbusClientTM40.WriteSingleRegister(3, (int)(singleCoilTM40.MW3*4000));
             } else { MessageBox.Show("You are not connected to PLC TM221CE40R"); }
         }
         /// <summary>
@@ -317,7 +315,6 @@ namespace Scada_TM221_WaterFllow
                     if (singleCoilTM40.M11 == true)
                     {
                         BtPumb5on.IsEnabled = false;
-
                         BtPumb5off.IsEnabled = true;
                     }
                     else
@@ -329,7 +326,6 @@ namespace Scada_TM221_WaterFllow
                     if (singleCoilTM40.M12 == true)
                     {
                         BtPumb6on.IsEnabled = false;
-
                         BtPumb6off.IsEnabled = true;
                     }
                     else 
@@ -345,6 +341,7 @@ namespace Scada_TM221_WaterFllow
                     singleCoilTM40.M19 = modbusClientTM40.ReadCoils(19, 1)[0];
                     modbusClientTM40.WriteSingleRegister(1, singleCoilTM40.MW1*400);
                     modbusClientTM40.WriteSingleRegister(2, singleCoilTM40.MW2*400);
+                    modbusClientTM40.WriteSingleRegister(3, (int)(singleCoilTM40.MW3 * 4000));
                     singleCoilTM40.MW4 = (double)(modbusClientTM40.ReadHoldingRegisters(4, 1)[0])/4000;
                 } else 
                 {
@@ -383,7 +380,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Eventer_1_On(Object sender, RoutedEventArgs e)
+        private void Eventer_1_On(object sender, RoutedEventArgs e)
         {
             if(modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
@@ -397,7 +394,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Eventer_1_Off(Object sender, RoutedEventArgs e)
+        private void Eventer_1_Off(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
@@ -411,7 +408,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_1_On(Object sender, RoutedEventArgs e)
+        private void Pumb_1_On(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
@@ -425,7 +422,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_1_Off(Object sender, RoutedEventArgs e)
+        private void Pumb_1_Off(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
@@ -439,7 +436,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Eventer_2_On(Object sender, RoutedEventArgs e)
+        private void Eventer_2_On(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
@@ -454,7 +451,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Eventer_2_Off(Object sender, RoutedEventArgs e)
+        private void Eventer_2_Off(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
@@ -468,7 +465,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_2_On(Object sender, RoutedEventArgs e)
+        private void Pumb_2_On(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
@@ -482,7 +479,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_2_Off(Object sender, RoutedEventArgs e)
+        private void Pumb_2_Off(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected && singleCoilTM40.M54 == false)
             {
@@ -497,7 +494,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_Javen_3_On(Object sender, RoutedEventArgs e)
+        private void Pumb_Javen_3_On(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected)
             {
@@ -511,7 +508,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_Javen_3_Off(Object sender, RoutedEventArgs e)
+        private void Pumb_Javen_3_Off(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected)
             {
@@ -525,7 +522,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_Javen_4_On(Object sender, RoutedEventArgs e)
+        private void Pumb_Javen_4_On(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected)
             {
@@ -540,7 +537,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_Javen_4_Off(Object sender, RoutedEventArgs e)
+        private void Pumb_Javen_4_Off(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected)
             {
@@ -555,7 +552,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_Khuay_5_On(Object sender, RoutedEventArgs e)
+        private void Pumb_Khuay_5_On(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected)
             {
@@ -569,7 +566,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_Khuay_5_Off(Object sender, RoutedEventArgs e)
+        private void Pumb_Khuay_5_Off(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected)
             {
@@ -583,7 +580,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_Khuay_6_On(Object sender, RoutedEventArgs e)
+        private void Pumb_Khuay_6_On(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected)
             {
@@ -598,7 +595,7 @@ namespace Scada_TM221_WaterFllow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Pumb_Khuay_6_Off(Object sender, RoutedEventArgs e)
+        private void Pumb_Khuay_6_Off(object sender, RoutedEventArgs e)
         {
             if (modbusClientTM40.Connected)
             {
