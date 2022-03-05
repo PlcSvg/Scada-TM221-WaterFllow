@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <DataTemplate x:Key="StirringPumb">
+    <DataTemplate x:Key="PumbStirring">
         <Viewbox Stretch="Uniform" Width="64" Height="64" ToolTip="Motor 5" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=mscorlib">
             <Viewbox.Tag>
                 <s:Int64>505836839</s:Int64>

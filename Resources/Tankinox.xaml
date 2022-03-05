@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <DataTemplate x:Key="TankInox">
-        <Viewbox Stretch="Uniform" Width="64" Height="64" ToolTip="Tank 21" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <Viewbox Stretch="Uniform" Width="200" Height="200" ToolTip="Tank 21" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=mscorlib">
             <Viewbox.Tag>
                 <s:Int64>40248576</s:Int64>
             </Viewbox.Tag>

@@ -8,13 +8,15 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/PushPumb.xaml" />
                 <ResourceDictionary Source="/Resources/PipeLineNgang.xaml" />
-                <ResourceDictionary Source="/Resources/StirringPumb.xaml" />
+                <ResourceDictionary Source="/Resources/PumbStirring.xaml" />
                 <ResourceDictionary Source="/Resources/Tankinox.xaml" />
-                <ResourceDictionary Source="/Resources/Tpipe.xaml"/>
                 <ResourceDictionary Source="/Resources/CutPipe.xaml" />
-                <ResourceDictionary Source="/Resources/Van.xaml" />
-                <ResourceDictionary Source="/Resources/Sensor.xaml" />
+                <ResourceDictionary Source="/Resources/VanQ.xaml" />
+                <ResourceDictionary Source="/Resources/VanG.xaml" />
                 <ResourceDictionary Source="/Resources/BinhInox.xaml" />
+                <ResourceDictionary Source="/Resources/PumbNT.xaml" />
+                <ResourceDictionary Source="/Resources/PumbJaven.xaml" />
+                <ResourceDictionary Source="/Resources/Sensor.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

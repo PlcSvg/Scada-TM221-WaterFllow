@@ -4,68 +4,2148 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Scada_TM221_WaterFllow"
-        mc:Ignorable="d" Width="1200" Height="800"
+        mc:Ignorable="d" Width="{Binding Path=Width}" Height="{Binding Path=Height}"
         Title="MainWindow"
         WindowState="Maximized">
 
-    <!--<Window.Resources>
-        <local:SingleCoilTM40 x:Key="t40"/>
-    </Window.Resources>-->
     <Border BorderBrush="DarkGray" Margin="1" BorderThickness="1">
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" MinWidth="260" MaxWidth="350" />
-            </Grid.ColumnDefinitions>
+        <DockPanel>
             <!--=========================== HEADER ===================================== -->
-            <Border BorderBrush="DarkGray" BorderThickness="0.5" Background="DarkCyan" Grid.Row="0" Grid.ColumnSpan="2" Height="30">
-                <DockPanel VerticalAlignment="Center">
-                    <TextBlock FontSize="20" TextAlignment="Center" DockPanel.Dock="Top"><Bold>CENTRAL WATER TREATMENT SYSTEM</Bold></TextBlock>
-                    <TextBlock DockPanel.Dock="Top" TextAlignment="Center">Hop Thinh Commune, Hiep Hoa District, Bac Giang Province</TextBlock>
-                </DockPanel>
+            <Border BorderBrush="DarkGray" BorderThickness="0.5" Background="#006241" Height="30" DockPanel.Dock="Top">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock FontSize="20" TextAlignment="Center"><Bold>CENTRAL WATER TREATMENT SYSTEM</Bold></TextBlock>
+                </StackPanel>
             </Border>
-            <!--=========================== ANIAMTION ===================================== -->
-            <Border Background="White" BorderBrush="DarkGray" BorderThickness="0.5" Grid.Row="1" Grid.Column="0">
-                <Canvas>
+            <!--=========================== ANIMATION ===================================== -->
+            <Border Background="White" BorderBrush="DarkGray" BorderThickness="0.5" DockPanel.Dock="Left" Width="1656">
+                <Canvas Name="canvasdata">
                     <Canvas.RenderTransform>
                         <ScaleTransform ScaleX="1" ScaleY="1"/>
                     </Canvas.RenderTransform>
-                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\HoThuBun.jpg" Width="300" Height="100" Canvas.Left="163" Canvas.Top="554"/>
-                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\Cumlangloc.jpg" Width="300" Height="200" Canvas.Left="175" Canvas.Top="37"/>
-                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\BeChua.jpg" Width="200" Height="150" Canvas.Left="263" Canvas.Top="310"/>
-                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\TramTho.jpg" Width="100" Height="200" Canvas.Left="42" Canvas.Top="308" />
+                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\HoThuBun.png" Width="500" Height="200" Canvas.Left="394" Canvas.Top="732"/>
+                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\BeChua.jpg" Width="450" Height="300" Canvas.Left="1020" Canvas.Top="629"/>
+                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\TramTho.jpg" Width="200" Height="400" Canvas.Left="32" Canvas.Top="541" />
+                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\Cumlangloc.jpg" Width="550" Height="300" Canvas.Left="182" Canvas.Top="80"/>
+                    <!--========================cum loc pipeline==============================-->
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="177" Canvas.Left="693.5" Canvas.Top="137.665">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.7" Height="17.7" Canvas.Left="708.5" Canvas.Top="120.95">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="27" Height="15" Canvas.Left="664.583" Canvas.Top="121">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.7" Height="17.7" Canvas.Left="647.5" Canvas.Top="121">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="25" Canvas.Left="647.5" Canvas.Top="138.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="32" Height="15" Canvas.Left="507.5" Canvas.Top="106.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.5" Height="17.5" Canvas.Left="538.667" Canvas.Top="106.5" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="188.5" Canvas.Left="541.208" Canvas.Top="123.625">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <!--=======================================javen pipeline=====================================================-->
+                    <ContentControl Name="khuay5" ContentTemplate="{StaticResource PumbStirring}" Canvas.Left="906" Canvas.Top="64"/>
+                    <ContentControl Name="khuay6" ContentTemplate="{StaticResource PumbStirring}" Canvas.Left="1072" Canvas.Top="64"/>
+                    <ContentControl Name="TankInox1" ContentTemplate="{StaticResource TankInox}" Canvas.Left="838" Canvas.Top="124"/>
+                    <ContentControl Name="TankInox2" ContentTemplate="{StaticResource TankInox}" Canvas.Left="1002" Canvas.Top="124"/>
+                    <ContentControl x:Name="PumbJaven3" ContentTemplate="{StaticResource PumbJaven}" Canvas.Left="892" Canvas.Top="446.5" />
+                    <ContentControl x:Name="PumbJaven4" ContentTemplate="{StaticResource PumbJaven}" Canvas.Left="891" Canvas.Top="545"/>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="5" Height="116" Canvas.Left="1101.3" Canvas.Top="121">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="5" Height="116" Canvas.Left="935.5" Canvas.Top="123.625">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
 
 
-                    <ContentControl ContentTemplate="{StaticResource PipeLineNgang}" Margin="10, 20, -100, -50" Canvas.Left="53" Canvas.Top="194" Width="64"/>
-                    <ContentControl ContentTemplate="{StaticResource PipeLineNgang}" Margin="10, 20, -100, -50" Canvas.Left="80" Canvas.Top="194"/>
-                    <ContentControl ContentTemplate="{StaticResource PipeLineNgang}" Margin="10, 20, -100, -50" Canvas.Left="90" Canvas.Top="194"/>
-                    <!--<ContentControl ContentTemplate="{StaticResource PushPumb}" Margin="100, 100"/>-->
-                    <!--<ContentControl ContentTemplate="{StaticResource StirringPumb}" Margin="48,251,-148,-152"/>-->
-                    <!--<ContentControl ContentTemplate="{StaticResource TankInox}" Margin="-602,-229,522,148"/>-->
-                    <!--<ContentControl ContentTemplate="{StaticResource Tpipe}"/>-->
-                    <!--<ContentControl ContentTemplate="{StaticResource Van}" />-->
-                    <!--<ContentControl ContentTemplate="{StaticResource Sensor}" />-->
+                    <Path Data="F1M112.499,-0.360999999999997L56.25,27.82 112.497,56 112.499,56z" Stretch="Fill" Width="48" Height="6" Canvas.Left="1094.9" Canvas.Top="230">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="Black" Offset="0" />
+                                    <GradientStop Color="Gray" Offset="0.45" />
+                                    <GradientStop Color="Gray" Offset="0.77" />
+                                    <GradientStop Color="Black" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M112.499,-0.360999999999997L56.25,27.82 112.497,56 112.499,56z" Stretch="Fill" Width="48" Height="6" Canvas.Left="1063.666" Canvas.Top="230" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="Black" Offset="0" />
+                                    <GradientStop Color="Gray" Offset="0.45" />
+                                    <GradientStop Color="Gray" Offset="0.77" />
+                                    <GradientStop Color="Black" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M112.499,-0.360999999999997L56.25,27.82 112.497,56 112.499,56z" Stretch="Fill" Width="48" Height="6" Canvas.Left="932.5" Canvas.Top="230">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="Black" Offset="0" />
+                                    <GradientStop Color="Gray" Offset="0.45" />
+                                    <GradientStop Color="Gray" Offset="0.77" />
+                                    <GradientStop Color="Black" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M112.499,-0.360999999999997L56.25,27.82 112.497,56 112.499,56z" Stretch="Fill" Width="48" Height="6" Canvas.Left="895.541" Canvas.Top="230" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="Black" Offset="0" />
+                                    <GradientStop Color="Gray" Offset="0.45" />
+                                    <GradientStop Color="Gray" Offset="0.77" />
+                                    <GradientStop Color="Black" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="8" Height="59" Canvas.Left="1099" Canvas.Top="285">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="8" Height="59" Canvas.Left="934" Canvas.Top="285">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="156" Height="8" Canvas.Left="942.5" Canvas.Top="345.3">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="9.4" Height="9.4" Canvas.Left="819.47" Canvas.Top="606.517">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="8" Height="11" Canvas.Left="1015.5" Canvas.Top="349.3">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="8" Height="237" Canvas.Left="1015.5" Canvas.Top="359.925">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="72" Height="8" Canvas.Left="940.563" Canvas.Top="498.8">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="8" Height="8" Canvas.Left="930" Canvas.Top="606.1">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="77" Height="8" Canvas.Left="938" Canvas.Top="598.1">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="9.4" Height="9.4" Canvas.Left="1106.95" Canvas.Top="353.3">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="9.4" Height="9.4" Canvas.Left="934" Canvas.Top="353.3">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="9.4" Height="9.4" Canvas.Left="1023.45" Canvas.Top="606.1">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="76" Height="8" Canvas.Left="831.688" Canvas.Top="499.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="77.5" Height="8" Canvas.Left="828.833" Canvas.Top="598.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="9.4" Height="9.4" Canvas.Left="827.5" Canvas.Top="30.4" >
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="8" Height="8" Canvas.Left="1012.417" Canvas.Top="498.787" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="8" Height="8" Canvas.Left="932.875" Canvas.Top="498.87" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="772.5" Height="8" Canvas.Left="46" Canvas.Top="30.374">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="9.4" Height="9.4" Canvas.Left="37" Canvas.Top="30.374">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="8" Height="331" Canvas.Left="37" Canvas.Top="39.374">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="9.4" Height="9.4" Canvas.Left="37" Canvas.Top="370.2" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="75" Height="8" Canvas.Left="46" Canvas.Top="371.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="8" Height="8" Canvas.Left="128" Canvas.Top="371.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-270"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="8" Height="558" Canvas.Left="819.5" Canvas.Top="39.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="8" Height="8" Canvas.Left="824" Canvas.Top="499.58" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <!--=========================CXL toi Be chua pipeline========================-->
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="222" Height="15" Canvas.Left="763.812" Canvas.Top="725">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.7" Height="17.7" Canvas.Left="747.5" Canvas.Top="740">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="416" Canvas.Left="747.5" Canvas.Top="306.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <ContentControl x:Name="Van8" ContentTemplate="{StaticResource VanQ}" Canvas.Left="805" Canvas.Top="259" Height="62" >
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="66" Canvas.Left="747" Canvas.Top="207.417">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.7" Height="17.7" Canvas.Left="762.1" Canvas.Top="190.2">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="74" Height="15" Canvas.Left="672.5" Canvas.Top="190.2">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <ContentControl x:Name="Van7" ContentTemplate="{StaticResource VanQ}" Canvas.Left="970" Canvas.Top="678" RenderTransformOrigin="0.5,0.5" Height="74" >
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform />
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="75" Height="15" Canvas.Left="1017.5" Canvas.Top="725">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.7" Height="17.7" Canvas.Left="1110" Canvas.Top="740">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="17" Canvas.Left="1094.9" Canvas.Top="706">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <!--============================Segment pumb ns========================================================-->
+                    <ContentControl Name="PumbNS1" ContentTemplate="{StaticResource PushPumb}" Canvas.Left="1349.5" Canvas.Top="242"/>
+                    <ContentControl Name="PumbNS2" ContentTemplate="{StaticResource PushPumb}" Canvas.Left="1224.5" Canvas.Top="242"/>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="185" Canvas.Left="1369.5" Canvas.Top="692">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.5" Height="17.5" Canvas.Left="1369.5" Canvas.Top="676.1">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="76" Height="15" Canvas.Left="1386.458" Canvas.Top="676.04">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.7" Height="17.7" Canvas.Left="1460.4" Canvas.Top="673.3" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="189" Canvas.Left="1463.062" Canvas.Top="484.728">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.7" Height="17.7" Canvas.Left="1478.1" Canvas.Top="467.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="190" Height="15" Canvas.Left="1272" Canvas.Top="467.492" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleY="0.014"/>
+                                <RotateTransform/>
+                                <TranslateTransform Y="0.031"/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="33" Canvas.Left="1267.5" Canvas.Top="210">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <ContentControl x:Name="Van1" ContentTemplate="{StaticResource VanQ}" Canvas.Left="1330" Canvas.Top="158" Height="74" Width="70" >
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="249" Height="15" Canvas.Left="1238.298" Canvas.Top="120.9">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <ContentControl ContentTemplate="{StaticResource Sensor}" Canvas.Left="1422" Canvas.Top="82" />
+                    <ContentControl x:Name="Van13" ContentTemplate="{StaticResource VanQ}" Canvas.Left="1454.5" Canvas.Top="158" Height="74" Width="70" >
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
+                    <Path Data="M74.662,81L88.738,81 88.738,29.427 74.662,29.427z" Stretch="Fill" Width="6" Height="25" Canvas.Left="1232.298" Canvas.Top="115.45">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
+                                    <GradientStop Color="#FFECECED" Offset="0.45" />
+                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
+                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="15" Height="25" Canvas.Left="1267.5" Canvas.Top="128.4">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="24" Canvas.Left="1267.5" Canvas.Top="151.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="15" Height="25" Canvas.Left="1392" Canvas.Top="129.85">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="26" Canvas.Left="1392" Canvas.Top="152.933">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="32" Canvas.Left="1392" Canvas.Top="210">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.5" Height="17.5" Canvas.Left="1255" Canvas.Top="464.905" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="270"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="130" Canvas.Left="1255" Canvas.Top="336.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="15" Height="17" Canvas.Left="1255" Canvas.Top="322" RenderTransformOrigin="0.5,0.5">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="15" Height="17" Canvas.Left="1380" Canvas.Top="322" RenderTransformOrigin="0.5,0.5">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="130" Canvas.Left="1380" Canvas.Top="336.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="15" Height="17" Canvas.Left="1379.98" Canvas.Top="456.58" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+
+
+
+
+                    <Viewbox Stretch="Uniform" Width="68" Height="30" ToolTip="Accelerating arrow (thick)" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=mscorlib" Canvas.Left="1480" Canvas.Top="113">
+                        <Canvas Tag="#00000000,#FFFF0000,Original,0,None" LayoutTransform="Identity" Width="998" Height="644">
+                            <Polygon Points="465,142 664,152 644,28 653,28 660,41 666,54 673,67 680,80 687,92 695,104 703,115 711,127 719,138 728,149 737,160 746,170 756,180 766,190 776,199 786,208 797,217 807,226 818,235 830,243 841,251 852,259 863,267 875,274 886,281 898,287 910,294 921,300 934,306 946,311 958,317 970,322 958,327 946,333 934,338 922,344 910,350 898,357 887,364 875,371 864,378 853,385 841,393 830,401 819,410 808,418 797,427 787,435 776,445 766,454 756,464 747,474 737,485 728,495 720,506 711,517 703,529 695,541 687,553 680,565 673,577 666,590 660,603 653,616 644,616 664,493 465,503 501,322 465,142" Fill="Blue" Stroke="#FF000000" StrokeThickness="3" />
+                            <Polygon Points="28,120 55,122 92,322 55,523 28,524 65,322 28,120" Fill="Blue" Stroke="#FF000000" StrokeThickness="3" />
+                            <Polygon Points="138,126 175,127 212,322 175,518 138,519 175,322 138,126" Fill="Blue" Stroke="#FF000000" StrokeThickness="3" />
+                            <Polygon Points="244,131 304,134 341,322 304,511 244,514 281,322 244,131" Fill="Blue" Stroke="#FF000000" StrokeThickness="3" />
+                            <Polygon Points="350,136 437,141 474,322 437,504 350,508 387,322 350,136" Fill="Blue" Stroke="#FF000000" StrokeThickness="3" />
+                        </Canvas>
+                    </Viewbox>
+
+
+
+
+                    <!--========================================Tram thO =>>> Cum lang loc====================================-->
+                    <ContentControl x:Name="PumbNT1" ContentTemplate="{StaticResource PumbNT}" Canvas.Left="60" Canvas.Top="848"/>
+                    <ContentControl x:Name="PumbNT2" ContentTemplate="{StaticResource PumbNT}" Canvas.Left="126" Canvas.Top="848" RenderTransformOrigin="0.5,0.5" Height="64" Width="82">
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="360"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="180" />
+                        </TransformGroup>
+                    </ContentControl>
+                    <ContentControl x:Name="Van3" ContentTemplate="{StaticResource VanQ}" Canvas.Left="128" Canvas.Top="503">
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
+                    <ContentControl x:Name="Van5" ContentTemplate="{StaticResource VanQ}" Canvas.Left="180" Canvas.Top="242">
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
+                    <ContentControl x:Name="Van4" ContentTemplate="{StaticResource VanQ}" Canvas.Left="232" Canvas.Top="503">
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="345" Canvas.Left="70.5" Canvas.Top="552.728">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="345" Canvas.Left="174.5" Canvas.Top="552.728">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="66" Canvas.Left="174.5" Canvas.Top="454.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.5" Height="17.5" Canvas.Left="70.5" Canvas.Top="437">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.5" Height="17.5" Canvas.Left="172" Canvas.Top="437" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="86" Height="15" Canvas.Left="87" Canvas.Top="437">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="15" Height="25" Canvas.Left="122.5" Canvas.Top="420.08" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="17.7" Height="17.7" Canvas.Left="122.5" Canvas.Top="106.6">
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="50" Height="15" Canvas.Left="139.5" Canvas.Top="106.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="62" Canvas.Left="70.5" Canvas.Top="454.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="132" Canvas.Left="122.5" Canvas.Top="124.2">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="128" Canvas.Left="122.5" Canvas.Top="292.5">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <!--=============================cum xu ly - be thu bun========================================-->
+                    <ContentControl x:Name="Van12" ContentTemplate="{StaticResource VanG}" Canvas.Left="356.5" Canvas.Top="468" Width="67">
+                        <ContentControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ContentControl.RenderTransform>
+                    </ContentControl>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="67" Height="10" Canvas.Left="340.5" Canvas.Top="793.75">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="77" Height="25" Canvas.Left="440.5" Canvas.Top="786.25">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="10" Height="10" Canvas.Left="835.667" Canvas.Top="867">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="10" Height="293" Canvas.Left="329.3" Canvas.Top="499.54">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="11.7" Height="11.7" Canvas.Left="265.4" Canvas.Top="419">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="10" Height="48" Canvas.Left="329.3" Canvas.Top="426.875">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M 0,30 L100,30 100,0 0,0z" Stretch="Fill" Width="117.6" Height="10" Canvas.Left="275.5" Canvas.Top="408.875">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M28.051,59.045L28.203,111.893 84.453,111.893 84.395,59.045C84.395,38.167,71.781,27.815,56.223,27.815L56.223,27.815C40.664,27.815,28.051,38.167,28.051,59.045" Stretch="Fill" Width="10" Height="13" Canvas.Left="329.3" Canvas.Top="413.875">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="11.8" Height="11.7" Canvas.Left="329.35" Canvas.Top="803.7">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1M71.32,-0.5 C 36.547,-0.5,0,21.326,0,64.555 L 0,64.555 60.45,64.717 C 61.713,57.112,65.16,55.277,71.126,54.785L71.126,54.785 C 71.827,40.293,71.32,-0.5,71.32,-0.5z" Stretch="Fill" Width="11.7" Height="11.7" Canvas.Left="404.5" Canvas.Top="418.8">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                        <Path.Fill>
+                            <RadialGradientBrush Center="0.945,0.941" RadiusX="-0.993" RadiusY="0.991" GradientOrigin="0.945,0.941">
+                                <RadialGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF585858" Offset="0" />
+                                    <GradientStop Color="#FF656666" Offset="0.1" />
+                                    <GradientStop Color="#FF888888" Offset="0.22" />
+                                    <GradientStop Color="#FFBEBEBE" Offset="0.4" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.53" />
+                                    <GradientStop Color="#FFC3C3C3" Offset="0.64" />
+                                    <GradientStop Color="#FF777777" Offset="0.89" />
+                                    <GradientStop Color="#FF535353" Offset="1" />
+                                </RadialGradientBrush.GradientStops>
+                            </RadialGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="10" Height="60" Canvas.Left="265.333" Canvas.Top="348">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="10" Height="60" Canvas.Left="394.5" Canvas.Top="348">
+                        <Path.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FF636465" Offset="0.01" />
+                                    <GradientStop Color="#FF959595" Offset="0.18" />
+                                    <GradientStop Color="#FFE0E0E0" Offset="0.5" />
+                                    <GradientStop Color="#FF656565" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Path.Fill>
+                    </Path>
+
+
+
+                    <!--===== Button trigger must be Eventtrigger =============================================-->
+                    <!--=================== Style can not set target name ===========================================-->
+                    <!--<Path Fill="Blue" Margin="0,0,15,15" RenderTransformOrigin="0.5 0.5">
+                        <Path.Data >
+                            <RectangleGeometry  x:Name="MyAnimatedRectGeometry" Rect="0,0 10 10" >
+                                <RectangleGeometry.Transform>
+                                <TransformGroup>
+                                    <RotateTransform x:Name="MyRotateTransform" Angle="0"/>
+                                    <TranslateTransform x:Name="MyTranslateTransform" X="70" Y="895"  />
+                                    </TransformGroup>
+                                </RectangleGeometry.Transform>
+                            </RectangleGeometry>
+                        </Path.Data>
+                    </Path>-->
+                    <!--<Rectangle Fill="Blue" RenderTransformOrigin="0 0" Height="13" Width="13" x:Name="demoTrigger" >
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform x:Name="MyRotateTransform" Angle="0"/>
+                                <TranslateTransform x:Name="MyTranslateTransform"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>-->
+                    <!--===============================================================================================-->
+                    <!--<Button Width="80" >start
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimationUsingPath 
+                                            Storyboard.TargetName="MyTranslateTransform"
+                                            Storyboard.TargetProperty="X"
+                                            Duration="0:0:10"
+                                            Source="X"
+                                            RepeatBehavior="Forever">
+                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                            </DoubleAnimationUsingPath.PathGeometry>
+                                        </DoubleAnimationUsingPath>
+                                        <DoubleAnimationUsingPath 
+                                            Storyboard.TargetName="MyTranslateTransform"
+                                            Storyboard.TargetProperty="Y"
+                                            Source="Y"
+                                            Duration="0:0:10"
+                                            RepeatBehavior="Forever">
+                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                            </DoubleAnimationUsingPath.PathGeometry>
+                                        </DoubleAnimationUsingPath>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>-->
+                    <!--<Rectangle Fill="Blue" RenderTransformOrigin="0 0" Height="13" Width="13" x:Name="demoTrigger" >
+                        <Rectangle.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M5}" Value="false">
+                                        <DataTrigger.EnterActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         From="0" To="1" Duration="0:0:1" 
+                                                         RepeatBehavior="Forever"
+                                                         AutoReverse="True"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>-->
+
+                    <!--=======================create feild: rendertransform and Fill before using storyboard.Targetproperty=======-->
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform10" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform10" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor10" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt10">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:0">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:0">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt10"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform11" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform11" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor11" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt11">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:1">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:1">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt11"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform12" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform12" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor12" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt12">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:2">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:2">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt12"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform13" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform13" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor13" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt13">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:3">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:3">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt32"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform14" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform14" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor14" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt14">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:4">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:4">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt14"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform15" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform15" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor15" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt15">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:5">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:5">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt15"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform16" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform16" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor16" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt16">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:6">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:6">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt16"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform17" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform17" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor17" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt17">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:7">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:7">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt17"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform18" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform18" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor18" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt18">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:8">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:8">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt18"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+                    <Rectangle RenderTransformOrigin="0 0" Height="13" Width="13">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <TranslateTransform x:Name="MyTranslateTransform19" X="0" Y="0"/>
+                                <RotateTransform x:Name="MyRotateTransform19" Angle="0"/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                        <Rectangle.Fill>
+                            <SolidColorBrush x:Name="changeColor19" />
+                        </Rectangle.Fill>
+                        <Rectangle.Style>
+                            <Style >
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.EnterActions >
+                                            <BeginStoryboard x:Name="Pumbnt19">
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:9">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                    <DoubleAnimationUsingPath 
+                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:9">
+                                                        <DoubleAnimationUsingPath.PathGeometry>
+                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                        </DoubleAnimationUsingPath.PathGeometry>
+                                                    </DoubleAnimationUsingPath>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.EnterActions >
+                                            <RemoveStoryboard BeginStoryboardName="Pumbnt19"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Rectangle.Style>
+                    </Rectangle>
+
+
+
                 </Canvas>
             </Border>
-            <!--<GridSplitter Grid.Row="1" Grid.Column="1" Width="0.5" HorizontalAlignment="Stretch"/>-->
             <!--=========================== CONTROL BAR ===================================== -->
-            <Border BorderBrush="DarkGray" BorderThickness="0.5" Grid.RowSpan="2" Grid.Column="2">
+            <Border BorderBrush="DarkGray" BorderThickness="0.5" Width="260" DockPanel.Dock="Right">
                 <Grid >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="30"/>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="160" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="40" />
+                        <RowDefinition Height="30" />
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="120" />
@@ -369,7 +2449,7 @@
                     </Border>
                 </Grid>
             </Border>
-        </Grid>
+        </DockPanel>
 
     </Border>
 

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using EasyModbus;
 using System.Timers;
+using System.Windows.Media.Animation;
 
 namespace Scada_TM221_WaterFllow
 {
@@ -29,6 +30,7 @@ namespace Scada_TM221_WaterFllow
         //public ModbusClient modbusClientTM24 = new ModbusClient("192.168.1.15", 502);
         public SingleCoilTM40 singleCoilTM40 = new SingleCoilTM40();
         public SingleCoilTM24 singleCoilTM24 = new SingleCoilTM24();
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -53,6 +55,13 @@ namespace Scada_TM221_WaterFllow
             InputPersure.DataContext = singleCoilTM40;
             PersureSet.DataContext = singleCoilTM40;
             PersureSetBlock.DataContext = singleCoilTM40;
+
+            this.DataContext = this;
+
+            canvasdata.DataContext = singleCoilTM24;
+
+            Storyboard storyboard = new Storyboard();
+            
         }
         /// <summary>
         /// Set Button off false when start app
