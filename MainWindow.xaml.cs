@@ -59,7 +59,46 @@ namespace Scada_TM221_WaterFllow
             canvasdata.DataContext = singleCoilTM24;
             Group_Wiring_Box.DataContext = singleCoilTM40;
             this.DataContext = this;
-            
+
+            List<Pumb> pumbs = new List<Pumb>();
+            Pumb pumbNt1 = new Pumb { CoilPumb = "Pumb NT1" };
+            Pumb pumbNt2 = new Pumb { CoilPumb = "Pumb NT2" };
+            Pumb pumbNS1 = new Pumb { CoilPumb = "Pumb NS1" };
+            Pumb pumbNS2 = new Pumb { CoilPumb = "Pumb NS2" };
+            Pumb pumbJ3 = new Pumb { CoilPumb = "Pumb J3" };
+            Pumb pumbJ4 = new Pumb { CoilPumb = "Pumb J4" };
+            Pumb pumbK5 = new Pumb { CoilPumb = "Pumb K5" };
+            Pumb pumbK6 = new Pumb { CoilPumb = "Pumb K6" };
+            if (singleCoilTM24.M11 == true)
+            {
+                pumbNt1.StartPumb = DateTime.Now;
+                pumbNt2.StartPumb = DateTime.Now;
+                pumbNS1.StartPumb = DateTime.Now;
+                pumbNS2.StartPumb = DateTime.Now;
+                pumbJ3.StartPumb = DateTime.Now;
+                pumbJ4.StartPumb = DateTime.Now;
+                pumbK5.StartPumb = DateTime.Now;
+                pumbK6.StartPumb = DateTime.Now;
+            }
+            else {
+                pumbNt1.EndPumb = DateTime.Now;
+                pumbNt2.EndPumb = DateTime.Now;
+                pumbNS1.EndPumb = DateTime.Now;
+                pumbNS2.EndPumb = DateTime.Now;
+                pumbJ3.EndPumb = DateTime.Now;
+                pumbJ4.EndPumb = DateTime.Now;
+                pumbK5.EndPumb = DateTime.Now;
+                pumbK6.EndPumb = DateTime.Now;
+            }
+            pumbs.Add(pumbNt1);
+            pumbs.Add(pumbNt2);
+            pumbs.Add(pumbNS1);
+            pumbs.Add(pumbNS2);
+            pumbs.Add(pumbJ3);
+            pumbs.Add(pumbJ4);
+            pumbs.Add(pumbK5);
+            pumbs.Add(pumbK6);
+            timePumb.ItemsSource = pumbs;
         }
         /// <summary>
         /// Set Button off false when start app
@@ -775,4 +814,12 @@ namespace Scada_TM221_WaterFllow
             } else { MessageBox.Show("You are not connected to PLC TM221CE24R"); }
         }
     }
+
+    public class Pumb
+    {
+        public String CoilPumb { set; get; }
+        public DateTime StartPumb { get; set; }
+        public DateTime EndPumb { get; set; }
+    }
+
 }

@@ -6339,7 +6339,7 @@
                     <TextBlock Canvas.Left="75" Canvas.Top="265"><Bold>Valve3</Bold></TextBlock>
                     <TextBlock Canvas.Left="772" Canvas.Top="252"><Bold>Valve4</Bold></TextBlock>
                     <TextBlock Canvas.Left="984" Canvas.Top="755"><Bold>Valve5</Bold></TextBlock>
-                    <TextBlock Canvas.Left="356" Canvas.Top="480"><Bold>Valve6</Bold></TextBlock>
+                    <TextBlock Canvas.Left="356" Canvas.Top="454"><Bold>Valve6</Bold></TextBlock>
                     <TextBlock Canvas.Left="1320" Canvas.Top="486" Background="LightGray"><Bold>Clean Water D250</Bold></TextBlock>
                     <TextBlock Canvas.Left="1207" Canvas.Top="621"><Bold>WATER TANK</Bold></TextBlock>
                     <TextBlock Canvas.Left="670" Canvas.Top="890"><Bold>WASTE TANK</Bold></TextBlock>
@@ -6415,26 +6415,7 @@
                         </Canvas.Style>
                     </Canvas>
                     <!--Color animation Pumb-->
-
-
-
-
-                    <Canvas Background="WhiteSmoke" Width="226" Height="150" Canvas.Left="432" Canvas.Top="515">
-
-                        
-                        
-                    </Canvas>
-
-
-
-
-
-
-
-
-
-
-
+                    <DataGrid Name="timePumb" Height="227" Width="318" Canvas.Left="374" Canvas.Top="489" />
                 </Canvas>
             </Border>
 
