@@ -55,12 +55,10 @@ namespace Scada_TM221_WaterFllow
             InputPersure.DataContext = singleCoilTM40;
             PersureSet.DataContext = singleCoilTM40;
             PersureSetBlock.DataContext = singleCoilTM40;
-
-            this.DataContext = this;
-
+            Persure.DataContext = singleCoilTM40;
             canvasdata.DataContext = singleCoilTM24;
-
-            Storyboard storyboard = new Storyboard();
+            Group_Wiring_Box.DataContext = singleCoilTM40;
+            this.DataContext = this;
             
         }
         /// <summary>

@@ -11,10 +11,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -23,10 +23,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -37,10 +37,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -49,10 +49,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -68,10 +68,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -104,8 +104,8 @@
                         <Path.Fill>
                             <RadialGradientBrush Center="0.5,0.5" RadiusX="0.595" RadiusY="0.439" GradientOrigin="0.5,0.5">
                                 <RadialGradientBrush.GradientStops>
-                                    <GradientStop Color="#FFECECED" Offset="0" />
-                                    <GradientStop Color="#FF6C6D70" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="1" />
                                 </RadialGradientBrush.GradientStops>
                             </RadialGradientBrush>
                         </Path.Fill>
@@ -114,10 +114,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -130,10 +130,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -143,10 +143,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -155,10 +155,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -167,10 +167,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -179,10 +179,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -191,10 +191,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -203,10 +203,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -215,10 +215,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -227,10 +227,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -239,10 +239,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -251,10 +251,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.499" EndPoint="1,0.499">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -263,10 +263,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.499" EndPoint="1,0.499">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -275,10 +275,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.499" EndPoint="1,0.499">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -287,10 +287,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.499" EndPoint="1,0.499">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -299,10 +299,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -311,10 +311,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -323,10 +323,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -335,10 +335,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -353,10 +353,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>
@@ -365,10 +365,10 @@
                         <Path.Fill>
                             <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                 <LinearGradientBrush.GradientStops>
-                                    <GradientStop Color="#FF5B5C5F" Offset="0" />
-                                    <GradientStop Color="#FFECECED" Offset="0.45" />
-                                    <GradientStop Color="#FFB1B3B6" Offset="0.77" />
-                                    <GradientStop Color="#FF5B5C5F" Offset="1" />
+                                    <GradientStop Color="#205AA7" Offset="0" />
+                                    <GradientStop Color="#7388C1" Offset="0.45" />
+                                    <GradientStop Color="#BFCAE6" Offset="0.77" />
+                                    <GradientStop Color="#205AA7" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
                         </Path.Fill>

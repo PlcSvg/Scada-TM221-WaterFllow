@@ -5,11 +5,50 @@
             <Viewbox.Tag>
                 <s:Int64>433977558</s:Int64>
             </Viewbox.Tag>
-            <Canvas UseLayoutRounding="False" Name="Group_Vertical_pump_10" Tag="#00000000,#FF008000,Original,0,Horizontal" LayoutTransform="-1,0,0,1,200,0" Width="59.969" Height="112.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Canvas Name="LayoutJaven" Tag="#00000000,#FF008000,Original,0,Horizontal" LayoutTransform="-1,0,0,1,200,0" Width="59.969" Height="112.5" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Canvas Name="Group_PortBody" Tag="#00000000,#FF008000,Original,0,None" Width="43.286" Height="28.633" Canvas.Left="13.076" Canvas.Top="83.367">
                     <Path Data="F1M13.076,112L50.049,112 50.049,108.062 13.076,108.062z" Stretch="Fill" Fill="#FF333333" Width="36.973" Height="3.938" Canvas.Left="0" Canvas.Top="24.695" />
                     <Path Data="F1M18.824,84.098C18.044,84.405,15.808,85.553,15.808,85.553L15.808,85.553 19.012,106.443C18.966,106.442,18.938,106.441,18.938,106.441L18.938,106.441 18.938,107.906C18.938,107.906,19.055,107.955,19.256,108.036L19.256,108.036 19.276,108.167 19.379,108.084C20.842,108.657,25.776,110.463,29.984,110.463L29.984,110.463C37.172,110.463,41.483,108.73,41.483,108.73L41.483,108.73 50.049,108.405 56.362,108.166 56.362,102.643 56.362,89.793C56.362,89.793,55.043,89.803,54.257,89.544L54.257,89.544C53.746,89.375,53.15,89.228,52.859,88.167L52.859,88.167C52.342,86.282,51.965,83.592,51.965,83.592L51.965,83.592 21.192,83.367C21.192,83.367,19.4,83.872,18.824,84.098" Stretch="Fill" Width="40.554" Height="27.096" Canvas.Left="2.732" Canvas.Top="0">
-                        <Path.Fill>
+                        <Path.Style>
+                            <Style TargetType="Path">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger.Setters>
+                                            <Setter Property="Fill">
+                                                <Setter.Value>
+                                                    <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                                        <LinearGradientBrush.GradientStops>
+                                                            <GradientStop Color="#00CC33" Offset="0.17" />
+                                                            <GradientStop Color="#339933" Offset="0.48" />
+                                                            <GradientStop Color="#339933" Offset="0.8" />
+                                                            <GradientStop Color="#00CC33" Offset="1" />
+                                                        </LinearGradientBrush.GradientStops>
+                                                    </LinearGradientBrush>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                        <DataTrigger.Setters>
+                                            <Setter Property="Fill">
+                                                <Setter.Value>
+                                                    <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                                                        <LinearGradientBrush.GradientStops>
+                                                            <GradientStop Color="#FF57585A" Offset="0" />
+                                                            <GradientStop Color="#FFDCDDDE" Offset="0.52" />
+                                                            <GradientStop Color="#FF57585A" Offset="1" />
+                                                        </LinearGradientBrush.GradientStops>
+                                                    </LinearGradientBrush>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Path.Style>
+
+
+                        <!--<Path.Fill>
                             <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
                                 <LinearGradientBrush.GradientStops>
                                     <GradientStop Color="#FF4C4C4E" Offset="0" />
@@ -19,7 +58,7 @@
                                     <GradientStop Color="#FF4C4C4E" Offset="1" />
                                 </LinearGradientBrush.GradientStops>
                             </LinearGradientBrush>
-                        </Path.Fill>
+                        </Path.Fill>-->
                     </Path>
                 </Canvas>
                 <Canvas Name="Group_Port2" Tag="#00000000,#FF008000,Original,0,None" Width="59.292" Height="24.799" Canvas.Left="0.339" Canvas.Top="85.171">

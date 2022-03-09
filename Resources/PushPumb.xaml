@@ -64,16 +64,14 @@
                     </Path>
                     <Path Data="F1M37.3892,49.2305C46.1212,49.2305 53.1992,56.3085 53.1992,65.0415 53.1992,73.7725 46.1212,80.8515 37.3892,80.8515 28.6572,80.8515 21.5782,73.7725 21.5782,65.0415 21.5782,56.3085 28.6572,49.2305 37.3892,49.2305" Stretch="Fill" Fill="#FFC8C9CA" Width="31.621" Height="31.621" Canvas.Left="7.612" Canvas.Top="7.612" />
                 </Canvas>
-                <Canvas Name="Group_Layer_10" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="18.692" Height="18.692" Canvas.Left="28.043" Canvas.Top="55.694">
+                <!--<Canvas Name="Group_Layer_10" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="18.692" Height="18.692" Canvas.Left="28.043" Canvas.Top="55.694">
                     <Path Data="M37.3892,55.6938C42.5512,55.6938 46.7352,59.8788 46.7352,65.0398 46.7352,70.2008 42.5512,74.3858 37.3892,74.3858 32.2272,74.3858 28.0432,70.2008 28.0432,65.0398 28.0432,59.8788 32.2272,55.6938 37.3892,55.6938z" Stretch="Fill" Fill="#FF4C4C4C" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="18.942" Height="18.942" Canvas.Left="-0.125" Canvas.Top="-0.125" />
-                </Canvas>
-                <Canvas Name="Group_Layer_7" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="16.78" Height="14.64" Canvas.Left="29.055" Canvas.Top="55.694">
-                    <Path Data="M36.2632,66.5039L35.5872,65.4909 29.0552,69.2069 29.6182,70.3339 36.2632,66.5039z" Stretch="Fill" Fill="#FFBFBFBF" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="7.458" Height="5.093" Canvas.Left="-0.125" Canvas.Top="9.672" />
-                    <Path Data="M36.825,63.352L38.063,63.352 38.063,55.694 36.825,55.694z" Stretch="Fill" Fill="#FFBFBFBF" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="1.488" Height="7.908" Canvas.Left="7.645" Canvas.Top="-0.125" />
-                    <Path Data="M39.3037,65.4912L38.6267,66.5042 45.2727,70.3342 45.8347,69.2072 39.3037,65.4912z" Stretch="Fill" Fill="#FFBFBFBF" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="7.458" Height="5.093" Canvas.Left="9.447" Canvas.Top="9.672" />
-                    <Path Data="M37.3892,62.7891C38.6332,62.7891 39.6412,63.7971 39.6412,65.0411 39.6412,66.2851 38.6332,67.2931 37.3892,67.2931 36.1452,67.2931 35.1372,66.2851 35.1372,65.0411 35.1372,63.7971 36.1452,62.7891 37.3892,62.7891z" Stretch="Fill" Fill="#FFCCCCCC" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="4.754" Height="4.754" Canvas.Left="5.957" Canvas.Top="6.97" />
-                </Canvas>
-                <Canvas Name="Group_Layer_9" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="39.078" Height="39.076" Canvas.Left="17.906" Canvas.Top="45.559">
+                </Canvas>-->
+                <!--<Path Data="M36.2632,66.5039L35.5872,65.4909 29.0552,69.2069 29.6182,70.3339 36.2632,66.5039z" Stretch="Fill" Fill="Green" Stroke="Green" StrokeThickness="0.25" Width="7.458" Height="5.093" Canvas.Left="-0.125" Canvas.Top="9.672"/>
+                <Path Data="M36.825,63.352L38.063,63.352 38.063,55.694 36.825,55.694z" Stretch="Fill" Fill="Green" Stroke="Green" StrokeThickness="0.25" Width="1.488" Height="7.908" Canvas.Left="7.645" Canvas.Top="-0.125" />
+                <Path Data="M39.3037,65.4912L38.6267,66.5042 45.2727,70.3342 45.8347,69.2072 39.3037,65.4912z" Stretch="Fill" Fill="Green" Stroke="Green" StrokeThickness="0.25" Width="7.458" Height="5.093" Canvas.Left="9.447" Canvas.Top="9.672" />
+                <Path Data="M37.3892,62.7891C38.6332,62.7891 39.6412,63.7971 39.6412,65.0411 39.6412,66.2851 38.6332,67.2931 37.3892,67.2931 36.1452,67.2931 35.1372,66.2851 35.1372,65.0411 35.1372,63.7971 36.1452,62.7891 37.3892,62.7891z" Stretch="Fill" Fill="Green" Stroke="Green" StrokeThickness="0.25" Width="4.754" Height="4.754" Canvas.Left="5.957" Canvas.Top="6.97" />-->
+                <!--<Canvas Name="Group_Layer_9" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="39.078" Height="39.076" Canvas.Left="17.906" Canvas.Top="45.559">
                     <Path Data="M43.6943,83.959L41.4423,84.635 40.8803,82.383 43.1323,81.707 43.6943,83.959z" Stretch="Fill" Fill="#FF4C4C4C" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="3.064" Height="3.178" Canvas.Left="22.849" Canvas.Top="36.023" />
                     <Path Data="M52.3662,78.3291L50.6772,79.9051 49.1002,78.3291 50.6772,76.6411 52.3662,78.3291z" Stretch="Fill" Fill="#FF4C4C4C" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="3.516" Height="3.514" Canvas.Left="31.069" Canvas.Top="30.957" />
                     <Path Data="M56.9834,69.0947L56.3074,71.3477 54.1684,70.7837 54.7314,68.5317 56.9834,69.0947z" Stretch="Fill" Fill="#FF4C4C4C" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="3.065" Height="3.066" Canvas.Left="36.138" Canvas.Top="22.848" />
@@ -86,7 +84,7 @@
                     <Path Data="M18.4702,71.3477L17.9072,69.0947 20.1592,68.5327 20.7222,70.7847 18.4702,71.3477z" Stretch="Fill" Fill="#FF4C4C4C" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="3.065" Height="3.065" Canvas.Left="-0.124" Canvas.Top="22.849" />
                     <Path Data="M24.2129,79.9053L22.5239,78.3293 24.2129,76.6403 25.7889,78.3293 24.2129,79.9053z" Stretch="Fill" Fill="#FF4C4C4C" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="3.515" Height="3.515" Canvas.Left="4.493" Canvas.Top="30.956" />
                     <Path Data="M33.4482,84.6348L31.1952,83.9588 31.7582,81.7068 34.0102,82.3828 33.4482,84.6348z" Stretch="Fill" Fill="#FF4C4C4C" Stroke="#FF4C4C4C" StrokeThickness="0.25" Width="3.065" Height="3.178" Canvas.Left="13.164" Canvas.Top="36.023" />
-                </Canvas>
+                </Canvas>-->
                 <Canvas Name="Group_Impeller_Drive" Tag="#00000000,#FFFFFFFF,Original,0,None" Width="25.674" Height="25.674" Canvas.Left="11.038" Canvas.Top="86.212">
                     <Path Data="F1M11.038,99.049C11.038,106.138,16.785,111.886,23.875,111.886L23.875,111.886C30.965,111.886,36.712,106.138,36.712,99.049L36.712,99.049C36.712,91.959,30.965,86.212,23.875,86.212L23.875,86.212C16.785,86.212,11.038,91.959,11.038,99.049" Stretch="Fill" Width="25.674" Height="25.674" Canvas.Left="0" Canvas.Top="0">
                         <Path.Fill>
