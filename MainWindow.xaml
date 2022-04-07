@@ -13,7 +13,7 @@
             <!--=================================================================================-->
             <!--================================== HEADER ====================================== -->
             <!--=================================================================================-->
-            <Border BorderBrush="DarkGray" BorderThickness="0.5" Background="#006241" Height="40" DockPanel.Dock="Top">
+            <Border BorderBrush="DarkGray" BorderThickness="0.5" Background="#006241" Height="30" DockPanel.Dock="Top">
                 <StackPanel VerticalAlignment="Center">
                     <TextBlock FontSize="20" TextAlignment="Center"><Bold>CENTRAL LIQUID TREATMENT SYSTEM</Bold></TextBlock>
                 </StackPanel>
@@ -21,10 +21,10 @@
             <!--=================================================================================-->
             <!--=============================== ANOTATION ====================================== -->
             <!--=================================================================================-->
-            <Border Background="White" BorderBrush="DarkGray" BorderThickness="0.5" DockPanel.Dock="Left" Width="1656">
+            <Border Background="White" BorderBrush="DarkGray" BorderThickness="0.5" DockPanel.Dock="Left" Width="1270">
                 <Canvas Name="canvasdata">
                     <Canvas.RenderTransform>
-                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
                     </Canvas.RenderTransform>
                     <Canvas.Resources>
                         <Style TargetType="TextBlock">
@@ -34,10 +34,10 @@
                             <Setter Property="Stretch" Value="Fill"/>
                         </Style>
                     </Canvas.Resources>
-                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\HoThuBun.Png" Width="500" Height="200" Canvas.Left="394" Canvas.Top="732"/>
-                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\Bechua.Png" Width="450" Height="300" Canvas.Left="1015" Canvas.Top="629"/>
-                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\TramTho.Png" Width="200" Height="400" Canvas.Left="31" Canvas.Top="533" />
-                    <Image Source="E:\C#\Scada-TM221-WaterFllow\Resources\Image\Cumlangloc.jpg" Width="550" Height="300" Canvas.Left="182" Canvas.Top="80"/>
+                    <Image Source="D:\C#\WPF\Scada-TM221-WaterFllow\Resources\Image\HoThuBun.Png" Width="500" Height="200" Canvas.Left="394" Canvas.Top="732"/>
+                    <Image Source="D:\C#\WPF\Scada-TM221-WaterFllow\Resources\Image\Bechua.Png" Width="450" Height="300" Canvas.Left="1015" Canvas.Top="629"/>
+                    <Image Source="D:\C#\WPF\Scada-TM221-WaterFllow\Resources\Image\TramTho.Png" Width="200" Height="400" Canvas.Left="31" Canvas.Top="533" />
+                    <Image Source="D:\C#\WPF\Scada-TM221-WaterFllow\Resources\Image\Cumlangloc.jpg" Width="550" Height="300" Canvas.Left="182" Canvas.Top="80"/>
                     <!--========================cum loc pipeline==============================-->
                     <Path Data="M0,112L29.7,112 29.7,-0.5 0,-0.5z" Stretch="Fill" Width="15" Height="177" Canvas.Left="693.5" Canvas.Top="137.665">
                         <Path.Fill>
@@ -3045,7 +3045,8 @@
                         </Path.Data>
                     </Path>
                     <!--Segment line pumbNT1-->
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                    <Canvas x:Name="DataTM24">
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
                         <Rectangle.RenderTransform>
                             <TransformGroup>
                                 <TranslateTransform x:Name="MyTranslateTransform10" X="0" Y="0"/>
@@ -3058,7 +3059,7 @@
                         <Rectangle.Style>
                             <Style >
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
                                         <DataTrigger.EnterActions >
                                             <BeginStoryboard x:Name="Pumbnt10">
                                                 <Storyboard>
@@ -3081,7 +3082,7 @@
                                             </BeginStoryboard>
                                         </DataTrigger.EnterActions>
                                     </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
+                                    <DataTrigger Binding="{Binding Path=M5}" Value="false" >
                                         <DataTrigger.EnterActions >
                                             <RemoveStoryboard BeginStoryboardName="Pumbnt10"/>
                                         </DataTrigger.EnterActions>
@@ -3090,411 +3091,413 @@
                             </Style>
                         </Rectangle.Style>
                     </Rectangle>
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <TranslateTransform x:Name="MyTranslateTransform11" X="0" Y="0"/>
-                                <RotateTransform x:Name="MyRotateTransform11" Angle="0"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Fill>
-                            <SolidColorBrush x:Name="changeColor11" />
-                        </Rectangle.Fill>
-                        <Rectangle.Style>
-                            <Style >
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
-                                        <DataTrigger.EnterActions >
-                                            <BeginStoryboard x:Name="Pumbnt11">
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
-                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:1">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:1">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
-                                        <DataTrigger.EnterActions >
-                                            <RemoveStoryboard BeginStoryboardName="Pumbnt11"/>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Rectangle.Style>
-                    </Rectangle>
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <TranslateTransform x:Name="MyTranslateTransform12" X="0" Y="0"/>
-                                <RotateTransform x:Name="MyRotateTransform12" Angle="0"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Fill>
-                            <SolidColorBrush x:Name="changeColor12" />
-                        </Rectangle.Fill>
-                        <Rectangle.Style>
-                            <Style >
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
-                                        <DataTrigger.EnterActions >
-                                            <BeginStoryboard x:Name="Pumbnt12">
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
-                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:2">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:2">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
-                                        <DataTrigger.EnterActions >
-                                            <RemoveStoryboard BeginStoryboardName="Pumbnt12"/>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Rectangle.Style>
-                    </Rectangle>
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <TranslateTransform x:Name="MyTranslateTransform13" X="0" Y="0"/>
-                                <RotateTransform x:Name="MyRotateTransform13" Angle="0"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Fill>
-                            <SolidColorBrush x:Name="changeColor13" />
-                        </Rectangle.Fill>
-                        <Rectangle.Style>
-                            <Style >
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
-                                        <DataTrigger.EnterActions >
-                                            <BeginStoryboard x:Name="Pumbnt13">
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
-                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:3">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:3">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
-                                        <DataTrigger.EnterActions >
-                                            <RemoveStoryboard BeginStoryboardName="Pumbnt32"/>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Rectangle.Style>
-                    </Rectangle>
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <TranslateTransform x:Name="MyTranslateTransform14" X="0" Y="0"/>
-                                <RotateTransform x:Name="MyRotateTransform14" Angle="0"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Fill>
-                            <SolidColorBrush x:Name="changeColor14" />
-                        </Rectangle.Fill>
-                        <Rectangle.Style>
-                            <Style >
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
-                                        <DataTrigger.EnterActions >
-                                            <BeginStoryboard x:Name="Pumbnt14">
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
-                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:4">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:4">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
-                                        <DataTrigger.EnterActions >
-                                            <RemoveStoryboard BeginStoryboardName="Pumbnt14"/>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Rectangle.Style>
-                    </Rectangle>
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <TranslateTransform x:Name="MyTranslateTransform15" X="0" Y="0"/>
-                                <RotateTransform x:Name="MyRotateTransform15" Angle="0"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Fill>
-                            <SolidColorBrush x:Name="changeColor15" />
-                        </Rectangle.Fill>
-                        <Rectangle.Style>
-                            <Style >
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
-                                        <DataTrigger.EnterActions >
-                                            <BeginStoryboard x:Name="Pumbnt15">
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
-                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:5">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:5">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
-                                        <DataTrigger.EnterActions >
-                                            <RemoveStoryboard BeginStoryboardName="Pumbnt15"/>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Rectangle.Style>
-                    </Rectangle>
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <TranslateTransform x:Name="MyTranslateTransform16" X="0" Y="0"/>
-                                <RotateTransform x:Name="MyRotateTransform16" Angle="0"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Fill>
-                            <SolidColorBrush x:Name="changeColor16" />
-                        </Rectangle.Fill>
-                        <Rectangle.Style>
-                            <Style >
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
-                                        <DataTrigger.EnterActions >
-                                            <BeginStoryboard x:Name="Pumbnt16">
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
-                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:6">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:6">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
-                                        <DataTrigger.EnterActions >
-                                            <RemoveStoryboard BeginStoryboardName="Pumbnt16"/>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Rectangle.Style>
-                    </Rectangle>
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <TranslateTransform x:Name="MyTranslateTransform17" X="0" Y="0"/>
-                                <RotateTransform x:Name="MyRotateTransform17" Angle="0"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Fill>
-                            <SolidColorBrush x:Name="changeColor17" />
-                        </Rectangle.Fill>
-                        <Rectangle.Style>
-                            <Style >
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
-                                        <DataTrigger.EnterActions >
-                                            <BeginStoryboard x:Name="Pumbnt17">
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
-                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:7">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:7">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
-                                        <DataTrigger.EnterActions >
-                                            <RemoveStoryboard BeginStoryboardName="Pumbnt17"/>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Rectangle.Style>
-                    </Rectangle>
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <TranslateTransform x:Name="MyTranslateTransform18" X="0" Y="0"/>
-                                <RotateTransform x:Name="MyRotateTransform18" Angle="0"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Fill>
-                            <SolidColorBrush x:Name="changeColor18" />
-                        </Rectangle.Fill>
-                        <Rectangle.Style>
-                            <Style >
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
-                                        <DataTrigger.EnterActions >
-                                            <BeginStoryboard x:Name="Pumbnt18">
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
-                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:8">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:8">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
-                                        <DataTrigger.EnterActions >
-                                            <RemoveStoryboard BeginStoryboardName="Pumbnt18"/>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Rectangle.Style>
-                    </Rectangle>
-                    <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <TranslateTransform x:Name="MyTranslateTransform19" X="0" Y="0"/>
-                                <RotateTransform x:Name="MyRotateTransform19" Angle="0"/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                        <Rectangle.Fill>
-                            <SolidColorBrush x:Name="changeColor19" />
-                        </Rectangle.Fill>
-                        <Rectangle.Style>
-                            <Style >
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="false" >
-                                        <DataTrigger.EnterActions >
-                                            <BeginStoryboard x:Name="Pumbnt19">
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
-                                                        Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:9">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                    <DoubleAnimationUsingPath 
-                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                                        Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:9">
-                                                        <DoubleAnimationUsingPath.PathGeometry>
-                                                            <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
-                                                        </DoubleAnimationUsingPath.PathGeometry>
-                                                    </DoubleAnimationUsingPath>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Path=M1}" Value="true" >
-                                        <DataTrigger.EnterActions >
-                                            <RemoveStoryboard BeginStoryboardName="Pumbnt19"/>
-                                        </DataTrigger.EnterActions>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Rectangle.Style>
-                    </Rectangle>
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform x:Name="MyTranslateTransform11" X="0" Y="0"/>
+                                    <RotateTransform x:Name="MyRotateTransform11" Angle="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="changeColor11" />
+                            </Rectangle.Fill>
+                            <Rectangle.Style>
+                                <Style >
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
+                                            <DataTrigger.EnterActions >
+                                                <BeginStoryboard x:Name="Pumbnt11">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                            Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:1">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                            Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:1">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="false" >
+                                            <DataTrigger.EnterActions >
+                                                <RemoveStoryboard BeginStoryboardName="Pumbnt11"/>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform x:Name="MyTranslateTransform12" X="0" Y="0"/>
+                                    <RotateTransform x:Name="MyRotateTransform12" Angle="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="changeColor12" />
+                            </Rectangle.Fill>
+                            <Rectangle.Style>
+                                <Style >
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
+                                            <DataTrigger.EnterActions >
+                                                <BeginStoryboard x:Name="Pumbnt12">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                            Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:2">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                            Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:2">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="false" >
+                                            <DataTrigger.EnterActions >
+                                                <RemoveStoryboard BeginStoryboardName="Pumbnt12"/>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform x:Name="MyTranslateTransform13" X="0" Y="0"/>
+                                    <RotateTransform x:Name="MyRotateTransform13" Angle="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="changeColor13" />
+                            </Rectangle.Fill>
+                            <Rectangle.Style>
+                                <Style >
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
+                                            <DataTrigger.EnterActions >
+                                                <BeginStoryboard x:Name="Pumbnt13">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                            Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:3">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                            Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:3">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="false" >
+                                            <DataTrigger.EnterActions >
+                                                <RemoveStoryboard BeginStoryboardName="Pumbnt13"/>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform x:Name="MyTranslateTransform14" X="0" Y="0"/>
+                                    <RotateTransform x:Name="MyRotateTransform14" Angle="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="changeColor14" />
+                            </Rectangle.Fill>
+                            <Rectangle.Style>
+                                <Style >
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
+                                            <DataTrigger.EnterActions >
+                                                <BeginStoryboard x:Name="Pumbnt14">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                            Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:4">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                            Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:4">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="false" >
+                                            <DataTrigger.EnterActions >
+                                                <RemoveStoryboard BeginStoryboardName="Pumbnt14"/>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform x:Name="MyTranslateTransform15" X="0" Y="0"/>
+                                    <RotateTransform x:Name="MyRotateTransform15" Angle="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="changeColor15" />
+                            </Rectangle.Fill>
+                            <Rectangle.Style>
+                                <Style >
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
+                                            <DataTrigger.EnterActions >
+                                                <BeginStoryboard x:Name="Pumbnt15">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                            Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:5">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                            Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:5">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="false" >
+                                            <DataTrigger.EnterActions >
+                                                <RemoveStoryboard BeginStoryboardName="Pumbnt15"/>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform x:Name="MyTranslateTransform16" X="0" Y="0"/>
+                                    <RotateTransform x:Name="MyRotateTransform16" Angle="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="changeColor16" />
+                            </Rectangle.Fill>
+                            <Rectangle.Style>
+                                <Style >
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
+                                            <DataTrigger.EnterActions >
+                                                <BeginStoryboard x:Name="Pumbnt16">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                            Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:6">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                            Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:6">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="false" >
+                                            <DataTrigger.EnterActions >
+                                                <RemoveStoryboard BeginStoryboardName="Pumbnt16"/>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform x:Name="MyTranslateTransform17" X="0" Y="0"/>
+                                    <RotateTransform x:Name="MyRotateTransform17" Angle="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="changeColor17" />
+                            </Rectangle.Fill>
+                            <Rectangle.Style>
+                                <Style >
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
+                                            <DataTrigger.EnterActions >
+                                                <BeginStoryboard x:Name="Pumbnt17">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                            Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:7">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                            Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:7">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="false" >
+                                            <DataTrigger.EnterActions >
+                                                <RemoveStoryboard BeginStoryboardName="Pumbnt17"/>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform x:Name="MyTranslateTransform18" X="0" Y="0"/>
+                                    <RotateTransform x:Name="MyRotateTransform18" Angle="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="changeColor18" />
+                            </Rectangle.Fill>
+                            <Rectangle.Style>
+                                <Style >
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
+                                            <DataTrigger.EnterActions >
+                                                <BeginStoryboard x:Name="Pumbnt18">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                            Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:8">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                            Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:8">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="false" >
+                                            <DataTrigger.EnterActions >
+                                                <RemoveStoryboard BeginStoryboardName="Pumbnt18"/>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                        <Rectangle RenderTransformOrigin="0 0" Height="11" Width="11">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform x:Name="MyTranslateTransform19" X="0" Y="0"/>
+                                    <RotateTransform x:Name="MyRotateTransform19" Angle="0"/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="changeColor19" />
+                            </Rectangle.Fill>
+                            <Rectangle.Style>
+                                <Style >
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="true" >
+                                            <DataTrigger.EnterActions >
+                                                <BeginStoryboard x:Name="Pumbnt19">
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetProperty="(Rectangle.Fill).(SolidColorBrush.Color)" To="#C18C00" Duration="0:0:0.1"/>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                            Source="X" Duration="0:0:10"  RepeatBehavior="Forever" BeginTime="0:0:9">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 " />
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                        <DoubleAnimationUsingPath 
+                                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                            Source="Y" Duration="0:0:10" RepeatBehavior="Forever" BeginTime="0:0:9">
+                                                            <DoubleAnimationUsingPath.PathGeometry>
+                                                                <PathGeometry Figures="M72,900 L72,448 Q72,437 83,438 L115,438 Q123,438 123,433 L123 115 Q123,108 128,108 L190,108 "/>
+                                                            </DoubleAnimationUsingPath.PathGeometry>
+                                                        </DoubleAnimationUsingPath>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=M5}" Value="false" >
+                                            <DataTrigger.EnterActions >
+                                                <RemoveStoryboard BeginStoryboardName="Pumbnt19"/>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Rectangle.Style>
+                        </Rectangle>
+                    </Canvas>
+                   
                     <!--Segment line pumbNT2-->
                     <Rectangle RenderTransformOrigin="0.5, 0.5" Height="11" Width="11">
                         <Rectangle.RenderTransform>
@@ -6425,23 +6428,23 @@
             <Border BorderBrush="DarkGray" BorderThickness="0.5" Width="260" DockPanel.Dock="Right">
                 <Grid >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="30"/>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="160" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="120" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="90" />
                     </Grid.RowDefinitions>
                     <Grid.Resources>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="Width" Value="50" />
-                            <Setter Property="Height" Value="23"/>
-                            <Setter Property="Margin" Value="2, 4"/>
+                            <Setter Property="Height" Value="20"/>
+                            <Setter Property="Margin" Value="2, 2"/>
                             <Setter Property="BorderBrush" Value="DarkGray" />
                             <Setter Property="BorderThickness" Value="1" />
                         </Style>
@@ -6454,7 +6457,7 @@
                             <Setter Property="BorderThickness" Value="1" />
                             <Setter Property="BorderBrush" Value="DarkGray" />
                             <Setter Property="Background" Value="Gray"/>
-                            <Setter Property="Padding" Value="5,7" />
+                            <Setter Property="Padding" Value="5,5" />
                         </Style>
                         <Style TargetType="{x:Type Slider}" >
                             <Setter Property="Margin" Value="0, 5"/>
